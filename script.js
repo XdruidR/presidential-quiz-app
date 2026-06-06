@@ -71,8 +71,9 @@ function showQuestion(index) {
   const sliderContainer = document.createElement('div');
   sliderContainer.className = 'slider-container';
 
-  const leftLabel = document.createElement('label');
-  leftLabel.textContent = question.left_label;
+  const leftLabel = document.createElement('div');
+  leftLabel.className = 'option-label option-left';
+  leftLabel.innerHTML = `<span class="side-marker">← Izquierda / 0</span><span>${escapeHtml(question.left_label)}</span>`;
 
   const sliderInput = document.createElement('input');
   sliderInput.type = 'range';
@@ -82,8 +83,9 @@ function showQuestion(index) {
   sliderInput.value = responses[index] ? responses[index].value * 10 : 5; // valor medio por defecto
   sliderInput.className = 'slider';
 
-  const rightLabel = document.createElement('label');
-  rightLabel.textContent = question.right_label;
+  const rightLabel = document.createElement('div');
+  rightLabel.className = 'option-label option-right';
+  rightLabel.innerHTML = `<span class="side-marker">Derecha / 10 →</span><span>${escapeHtml(question.right_label)}</span>`;
 
   sliderContainer.appendChild(leftLabel);
   sliderContainer.appendChild(sliderInput);
@@ -133,6 +135,12 @@ function showQuestion(index) {
   // Ajustar botones
   prevBtn.disabled = index === 0;
   nextBtn.textContent = index === questions.length - 1 ? 'Finalizar' : 'Siguiente';
+}
+
+function escapeHtml(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
 }
 
 // Manejar clic en «Siguiente»
