@@ -9,10 +9,11 @@
  */
 
 // Variables globales para almacenar preguntas y respuestas
-const APP_VERSION = 'hint-toggle-2';
+const APP_VERSION = 'cool-results-1';
 let questions = [];
 let currentIndex = 0;
 let useWeightedResults = false;
+let revealCandidateAlignment = false;
 const responses = [];
 
 // Referencias a elementos del DOM
@@ -56,6 +57,9 @@ async function loadQuestions() {
 
 // Mostrar una pregunta por índice
 function showQuestion(index) {
+  quizContainer.classList.remove('hidden');
+  navigation.classList.remove('hidden');
+  resultsContainer.classList.add('hidden');
   const question = questions[index];
   currentIndex = index;
   quizContainer.innerHTML = '';
@@ -165,6 +169,50 @@ function formatWeight(value) {
 
 function getQuestionDimension(question) {
   return question.dimension || question.theme || 'Sin dimensión';
+}
+
+function getDimensionEmoji(dimension) {
+  const text = (dimension || '').toLowerCase();
+  if (text.includes('econom')) return '💸';
+  if (text.includes('seguridad') || text.includes('justicia')) return '🛡️';
+  if (text.includes('territorio') || text.includes('rural')) return '🌱';
+  if (text.includes('energ')) return '⚡';
+  if (text.includes('institu')) return '🏛️';
+  if (text.includes('exterior')) return '🌎';
+  if (text.includes('social') || text.includes('educ')) return '🎓';
+  return '✨';
+}
+
+function getQuestionBubbleModel(question, response, index) {
+  const value = response ? response.value : 0.5;
+  const affect = response ? response.affect : 'No me afecta/no sé';
+  const weight = getAffectWeight(affect);
+  let leaningCandidate = 'Mixto / neutral';
+  if (value < 0.45 && question.candidate_alignment_left !== 'Unclear') {
+    leaningCandidate = question.candidate_alignment_left;
+  } else if (value > 0.55 && question.candidate_alignment_right !== 'Unclear') {
+    leaningCandidate = question.candidate_alignment_right;
+  }
+  return {
+    number: index + 1,
+    position: Math.round(value * 100),
+    size: Math.round(28 + weight * 8),
+    emoji: getDimensionEmoji(getQuestionDimension(question)),
+    confidence: formatConfidence(question.alignment_confidence),
+    leaningCandidate,
+  };
+}
+
+function buildCandidateRevealCopy(revealed) {
+  return revealed
+    ? {
+        heading: 'Afinidad revelada',
+        note: 'Ahora ves cómo se mueven tus respuestas hacia cada candidato. Esto sigue siendo una lectura aproximada, no una recomendación de voto.',
+      }
+    : {
+        heading: 'Tus respuestas, todavía sin candidatos',
+        note: 'La alineación está oculta por defecto. Primero mira tu propio patrón de preferencias; luego puedes revelar la lectura por candidato.',
+      };
 }
 
 function isLowConfidenceQuestion(question) {
@@ -338,8 +386,63 @@ function calculateAffinityResults(sourceQuestions, sourceResponses, weighted = f
   };
 }
 
+function appendPreferenceMap(target, revealed) {
+  const copy = buildCandidateRevealCopy(revealed);
+  const section = document.createElement('section');
+  section.className = `results-section preference-map ${revealed ? 'is-revealed' : 'is-concealed'}`;
+
+  const header = document.createElement('div');
+  header.className = 'section-kicker';
+  header.textContent = '🧭 Mapa de respuestas';
+  section.appendChild(header);
+
+  const heading = document.createElement('h2');
+  heading.textContent = copy.heading;
+  section.appendChild(heading);
+
+  const note = document.createElement('p');
+  note.className = 'info-text';
+  note.textContent = copy.note;
+  section.appendChild(note);
+
+  const rail = document.createElement('div');
+  rail.className = 'candidate-rail';
+  const leftLabel = document.createElement('span');
+  leftLabel.textContent = revealed ? 'Cepeda' : 'Polo A';
+  const centerLabel = document.createElement('span');
+  centerLabel.textContent = revealed ? 'zona mixta' : 'preferencia propia';
+  const rightLabel = document.createElement('span');
+  rightLabel.textContent = revealed ? 'De La Espriella' : 'Polo B';
+  rail.appendChild(leftLabel);
+  rail.appendChild(centerLabel);
+  rail.appendChild(rightLabel);
+  section.appendChild(rail);
+
+  const cloud = document.createElement('div');
+  cloud.className = 'bubble-cloud';
+  questions.forEach((q, i) => {
+    const model = getQuestionBubbleModel(q, responses[i], i);
+    const bubble = document.createElement('button');
+    bubble.type = 'button';
+    bubble.className = `question-bubble confidence-${(q.alignment_confidence || 'low').toLowerCase()}`;
+    bubble.style.left = `clamp(${model.size / 2}px, ${model.position}%, calc(100% - ${model.size / 2}px))`;
+    bubble.style.width = `${model.size}px`;
+    bubble.style.height = `${model.size}px`;
+    bubble.style.animationDelay = `${i * 35}ms`;
+    bubble.title = revealed
+      ? `P${model.number}: ${model.leaningCandidate} · ${model.confidence}`
+      : `P${model.number}: ${q.title}`;
+    bubble.innerHTML = `<span>${model.number}</span><small>${model.emoji}</small>`;
+    cloud.appendChild(bubble);
+  });
+  section.appendChild(cloud);
+  target.appendChild(section);
+}
+
 // Calcular y mostrar resultados
 function showResults() {
+  quizContainer.classList.add('hidden');
+  navigation.classList.add('hidden');
   const results = calculateAffinityResults(questions, responses, useWeightedResults);
   const {
     candidatePercentages,
@@ -376,6 +479,32 @@ function showResults() {
     ? 'Modo ponderado: “Me afecta mucho” cuenta ×2, “Me afecta algo” ×1 y “No me afecta/no sé” ×0,5.'
     : 'Modo sin ponderar: todas las preguntas cuentan igual. Activa la ponderación para dar más peso a los temas que más te afectan.';
   resultsContainer.appendChild(weightingNote);
+
+  const revealControl = document.createElement('label');
+  revealControl.className = 'reveal-toggle';
+  const revealCheckbox = document.createElement('input');
+  revealCheckbox.type = 'checkbox';
+  revealCheckbox.checked = revealCandidateAlignment;
+  revealCheckbox.addEventListener('change', () => {
+    revealCandidateAlignment = revealCheckbox.checked;
+    showResults();
+  });
+  const revealText = document.createElement('span');
+  revealText.textContent = revealCandidateAlignment ? 'Ocultar alineación de candidatos' : 'Revelar alineación de candidatos ✨';
+  revealControl.appendChild(revealCheckbox);
+  revealControl.appendChild(revealText);
+  resultsContainer.appendChild(revealControl);
+
+  appendPreferenceMap(resultsContainer, revealCandidateAlignment);
+
+  if (!revealCandidateAlignment) {
+    const hiddenNote = document.createElement('p');
+    hiddenNote.className = 'info-text reveal-note';
+    hiddenNote.textContent = 'Abajo ves tus respuestas registradas. Activa “Revelar” para mostrar tablas de afinidad, candidatos, confianza y fuentes.';
+    resultsContainer.appendChild(hiddenNote);
+  }
+
+  if (revealCandidateAlignment) {
   // Tabla de afinidad
   const table = document.createElement('table');
   const headerRow = document.createElement('tr');
@@ -500,6 +629,8 @@ function showResults() {
     resultsContainer.appendChild(lowSection);
   }
 
+  }
+
   // Explicación detallada
   const detailSection = document.createElement('div');
   detailSection.className = 'results-section';
@@ -531,21 +662,23 @@ function showResults() {
     const extreme = userValue === 0.5 ? 'Neutral' : userValue < 0.5 ? 'Opción A' : 'Opción B';
     p1.textContent = `Tu respuesta: ${extreme}. Nivel de afectación: ${resp ? resp.affect : 'No me afecta/no sé'}`;
     item.appendChild(p1);
-    const p2 = document.createElement('p');
-    p2.style.margin = '4px 0';
-    p2.textContent = `La Opción A se aproxima más a: ${q.candidate_alignment_left || 'Sin definición'}; la Opción B se aproxima más a: ${q.candidate_alignment_right || 'Sin definición'}.`;
-    item.appendChild(p2);
-    const p3 = document.createElement('p');
-    p3.style.margin = '4px 0';
-    p3.textContent = `Confianza de la correspondencia: ${formatConfidence(q.alignment_confidence)}. Base: ${q.alignment_basis || 'sin base documentada'}.`;
-    item.appendChild(p3);
+    if (revealCandidateAlignment) {
+      const p2 = document.createElement('p');
+      p2.style.margin = '4px 0';
+      p2.textContent = `La Opción A se aproxima más a: ${q.candidate_alignment_left || 'Sin definición'}; la Opción B se aproxima más a: ${q.candidate_alignment_right || 'Sin definición'}.`;
+      item.appendChild(p2);
+      const p3 = document.createElement('p');
+      p3.style.margin = '4px 0';
+      p3.textContent = `Confianza de la correspondencia: ${formatConfidence(q.alignment_confidence)}. Base: ${q.alignment_basis || 'sin base documentada'}.`;
+      item.appendChild(p3);
+    }
     if (q.why_this_question_matters) {
       const p4 = document.createElement('p');
       p4.style.margin = '4px 0';
       p4.textContent = `Por qué importa: ${q.why_this_question_matters}`;
       item.appendChild(p4);
     }
-    if (Array.isArray(q.sources) && q.sources.length > 0) {
+    if (revealCandidateAlignment && Array.isArray(q.sources) && q.sources.length > 0) {
       const sources = document.createElement('details');
       const summary = document.createElement('summary');
       summary.textContent = 'Fuentes usadas';
