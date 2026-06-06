@@ -9,6 +9,7 @@
  */
 
 // Variables globales para almacenar preguntas y respuestas
+const APP_VERSION = 'hint-toggle-2';
 let questions = [];
 let currentIndex = 0;
 let useWeightedResults = false;
@@ -33,7 +34,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 // Cargar preguntas del archivo JSON y randomizar la orientación
 async function loadQuestions() {
   try {
-    const response = await fetch('questions.json');
+    const response = await fetch(`questions.json?v=${APP_VERSION}`);
     const data = await response.json();
     questions = data.map((q) => {
       // Clonar el objeto para no modificar el original
