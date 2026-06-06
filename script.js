@@ -153,6 +153,30 @@ function formatWeight(value) {
   return Number.isInteger(value) ? `${value}` : value.toFixed(1).replace('.', ',');
 }
 
+function getQuestionDimension(question) {
+  return question.dimension || question.theme || 'Sin dimensión';
+}
+
+function isLowConfidenceQuestion(question) {
+  const confidence = (question.alignment_confidence || '').toLowerCase();
+  return confidence === 'low' || question.candidate_alignment_left === 'Unclear' || question.candidate_alignment_right === 'Unclear';
+}
+
+function getLowConfidenceQuestions(sourceQuestions) {
+  return sourceQuestions.filter(isLowConfidenceQuestion);
+}
+
+function formatConfidence(confidence) {
+  const labels = {
+    high: 'alta',
+    medium: 'media',
+    low: 'baja',
+    mixed: 'mixta',
+    unclear: 'sin claridad',
+  };
+  return labels[(confidence || '').toLowerCase()] || confidence || 'sin claridad';
+}
+
 // Manejar clic en «Siguiente»
 nextBtn.addEventListener('click', () => {
   handleNavigation(1);
@@ -215,6 +239,9 @@ function calculateAffinityResults(sourceQuestions, sourceResponses, weighted = f
   const themeScores = {};
   const themeDenominators = {};
   const themeQuestionCounts = {};
+  const dimensionScores = {};
+  const dimensionDenominators = {};
+  const dimensionQuestionCounts = {};
 
   sourceQuestions.forEach((q, i) => {
     const resp = sourceResponses[i] || { value: 0.5, affect: 'No me afecta/no sé' };
@@ -223,6 +250,7 @@ function calculateAffinityResults(sourceQuestions, sourceResponses, weighted = f
     const optionACand = q.candidate_alignment_left;
     const optionBCand = q.candidate_alignment_right;
     const theme = q.theme;
+    const dimension = getQuestionDimension(q);
 
     if (optionACand && optionACand !== 'Unclear') {
       candidateScores[optionACand] = (candidateScores[optionACand] || 0) + (1 - value) * factor;
@@ -250,6 +278,22 @@ function calculateAffinityResults(sourceQuestions, sourceResponses, weighted = f
         themeQuestionCounts[theme][optionBCand] = (themeQuestionCounts[theme][optionBCand] || 0) + 1;
       }
     }
+
+    if (dimension) {
+      dimensionScores[dimension] = dimensionScores[dimension] || {};
+      dimensionDenominators[dimension] = dimensionDenominators[dimension] || {};
+      dimensionQuestionCounts[dimension] = dimensionQuestionCounts[dimension] || {};
+      if (optionACand && optionACand !== 'Unclear') {
+        dimensionScores[dimension][optionACand] = (dimensionScores[dimension][optionACand] || 0) + (1 - value) * factor;
+        dimensionDenominators[dimension][optionACand] = (dimensionDenominators[dimension][optionACand] || 0) + factor;
+        dimensionQuestionCounts[dimension][optionACand] = (dimensionQuestionCounts[dimension][optionACand] || 0) + 1;
+      }
+      if (optionBCand && optionBCand !== 'Unclear') {
+        dimensionScores[dimension][optionBCand] = (dimensionScores[dimension][optionBCand] || 0) + value * factor;
+        dimensionDenominators[dimension][optionBCand] = (dimensionDenominators[dimension][optionBCand] || 0) + factor;
+        dimensionQuestionCounts[dimension][optionBCand] = (dimensionQuestionCounts[dimension][optionBCand] || 0) + 1;
+      }
+    }
   });
 
   const candidatePercentages = {};
@@ -257,6 +301,16 @@ function calculateAffinityResults(sourceQuestions, sourceResponses, weighted = f
     const total = candidateScores[cand];
     const denominator = candidateDenominators[cand];
     candidatePercentages[cand] = denominator > 0 ? Math.round((total / denominator) * 100) : 0;
+  }
+
+  const dimensionPercentages = {};
+  for (const dimension of Object.keys(dimensionScores)) {
+    dimensionPercentages[dimension] = {};
+    for (const cand of Object.keys(dimensionScores[dimension])) {
+      const total = dimensionScores[dimension][cand];
+      const denominator = dimensionDenominators[dimension][cand];
+      dimensionPercentages[dimension][cand] = denominator > 0 ? Math.round((total / denominator) * 100) : 0;
+    }
   }
 
   return {
@@ -267,6 +321,10 @@ function calculateAffinityResults(sourceQuestions, sourceResponses, weighted = f
     themeScores,
     themeDenominators,
     themeQuestionCounts,
+    dimensionScores,
+    dimensionDenominators,
+    dimensionQuestionCounts,
+    dimensionPercentages,
   };
 }
 
@@ -279,6 +337,7 @@ function showResults() {
     candidateDenominators,
     themeScores,
     themeDenominators,
+    dimensionPercentages,
   } = results;
   // Preparar HTML de resultados
   resultsContainer.innerHTML = '';
@@ -333,6 +392,40 @@ function showResults() {
   }
   resultsContainer.appendChild(table);
 
+  // Resultados por dimensión amplia
+  const dimensionSection = document.createElement('div');
+  dimensionSection.className = 'results-section';
+  const dimensionHeader = document.createElement('h2');
+  dimensionHeader.textContent = 'Resultados por dimensión';
+  dimensionSection.appendChild(dimensionHeader);
+  const dimensionIntro = document.createElement('p');
+  dimensionIntro.className = 'info-text';
+  dimensionIntro.textContent = 'Agrupación amplia de dilemas: economía, seguridad, territorio, institucionalidad, energía y relaciones exteriores.';
+  dimensionSection.appendChild(dimensionIntro);
+  const dimensionTable = document.createElement('table');
+  const dimensionHeaderRow = document.createElement('tr');
+  ['Dimensión', 'Cepeda', 'De La Espriella'].forEach((text) => {
+    const th = document.createElement('th');
+    th.textContent = text;
+    dimensionHeaderRow.appendChild(th);
+  });
+  dimensionTable.appendChild(dimensionHeaderRow);
+  for (const dimension of Object.keys(dimensionPercentages)) {
+    const tr = document.createElement('tr');
+    const tdDimension = document.createElement('td');
+    tdDimension.textContent = dimension;
+    const tdCepeda = document.createElement('td');
+    tdCepeda.textContent = dimensionPercentages[dimension].Cepeda != null ? `${dimensionPercentages[dimension].Cepeda} %` : '-';
+    const tdEspriella = document.createElement('td');
+    tdEspriella.textContent = dimensionPercentages[dimension]['De La Espriella'] != null ? `${dimensionPercentages[dimension]['De La Espriella']} %` : '-';
+    tr.appendChild(tdDimension);
+    tr.appendChild(tdCepeda);
+    tr.appendChild(tdEspriella);
+    dimensionTable.appendChild(tr);
+  }
+  dimensionSection.appendChild(dimensionTable);
+  resultsContainer.appendChild(dimensionSection);
+
   // Resultados por tema
   const themeSection = document.createElement('div');
   themeSection.className = 'results-section';
@@ -375,6 +468,28 @@ function showResults() {
   themeSection.appendChild(themeTable);
   resultsContainer.appendChild(themeSection);
 
+  // Preguntas con baja confianza o sin correspondencia clara
+  const lowConfidenceQuestions = getLowConfidenceQuestions(questions);
+  if (lowConfidenceQuestions.length > 0) {
+    const lowSection = document.createElement('div');
+    lowSection.className = 'results-section';
+    const lowHeader = document.createElement('h2');
+    lowHeader.textContent = 'Preguntas de baja confianza o sin correspondencia clara';
+    lowSection.appendChild(lowHeader);
+    const lowIntro = document.createElement('p');
+    lowIntro.className = 'info-text';
+    lowIntro.textContent = 'Estas preguntas se muestran aparte porque la diferencia entre candidatos es inferida, débil o no está claramente documentada. No las leas como una coincidencia firme.';
+    lowSection.appendChild(lowIntro);
+    const list = document.createElement('ul');
+    lowConfidenceQuestions.forEach((q) => {
+      const li = document.createElement('li');
+      li.textContent = `${q.id}: ${q.title} — confianza ${formatConfidence(q.alignment_confidence)}`;
+      list.appendChild(li);
+    });
+    lowSection.appendChild(list);
+    resultsContainer.appendChild(lowSection);
+  }
+
   // Explicación detallada
   const detailSection = document.createElement('div');
   detailSection.className = 'results-section';
@@ -410,6 +525,40 @@ function showResults() {
     p2.style.margin = '4px 0';
     p2.textContent = `La Opción A se aproxima más a: ${q.candidate_alignment_left || 'Sin definición'}; la Opción B se aproxima más a: ${q.candidate_alignment_right || 'Sin definición'}.`;
     item.appendChild(p2);
+    const p3 = document.createElement('p');
+    p3.style.margin = '4px 0';
+    p3.textContent = `Confianza de la correspondencia: ${formatConfidence(q.alignment_confidence)}. Base: ${q.alignment_basis || 'sin base documentada'}.`;
+    item.appendChild(p3);
+    if (q.why_this_question_matters) {
+      const p4 = document.createElement('p');
+      p4.style.margin = '4px 0';
+      p4.textContent = `Por qué importa: ${q.why_this_question_matters}`;
+      item.appendChild(p4);
+    }
+    if (Array.isArray(q.sources) && q.sources.length > 0) {
+      const sources = document.createElement('details');
+      const summary = document.createElement('summary');
+      summary.textContent = 'Fuentes usadas';
+      sources.appendChild(summary);
+      const list = document.createElement('ul');
+      q.sources.forEach((source) => {
+        const li = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = source.url;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = `${source.publisher || 'Fuente'} — ${source.title || source.url}`;
+        li.appendChild(link);
+        if (source.what_it_supports) {
+          const support = document.createElement('span');
+          support.textContent = `: ${source.what_it_supports}`;
+          li.appendChild(support);
+        }
+        list.appendChild(li);
+      });
+      sources.appendChild(list);
+      item.appendChild(sources);
+    }
     detailSection.appendChild(item);
   });
   resultsContainer.appendChild(detailSection);
@@ -417,7 +566,7 @@ function showResults() {
   // Conclusión
   const conclusion = document.createElement('p');
   conclusion.className = 'info-text';
-  conclusion.textContent = 'Estos resultados son orientativos. No constituyen una recomendación de voto. Tu afinidad se calcula en función de tus respuestas y de las posiciones públicas de los candidatos.';
+  conclusion.textContent = 'Tus respuestas parecen más cercanas a ciertas tendencias de cada candidato en distintas áreas. Esto no es una recomendación de voto: solo compara tus preferencias declaradas con posiciones públicas e inferencias razonables, con sus niveles de confianza.';
   resultsContainer.appendChild(conclusion);
 
   resultsContainer.classList.remove('hidden');

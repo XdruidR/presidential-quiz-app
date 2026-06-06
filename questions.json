@@ -40,7 +40,8 @@
         "url": "https://www.reuters.com/world/americas/colombia-outside-candidate-vows-military-offensive-security-2026-02-11/",
         "what_it_supports": "De la Espriella planea recortar el tamaño del Estado y los impuestos para atraer inversión【824602632538714†L224-L266】."
       }
-    ]
+    ],
+    "dimension": "economía"
   },
   {
     "id": "Q02",
@@ -77,7 +78,8 @@
         "url": "https://www.reuters.com/world/americas/colombians-head-polls-with-peace-efforts-economy-agenda-2026-05-29/",
         "what_it_supports": "De la Espriella planea reactivar la minería y el petróleo como eje económico【185161692428370†L242-L245】."
       }
-    ]
+    ],
+    "dimension": "energía y clima"
   },
   {
     "id": "Q03",
@@ -120,7 +122,8 @@
         "url": "https://www.reuters.com/world/americas/colombians-head-polls-with-peace-efforts-economy-on-agenda-2026-05-29/",
         "what_it_supports": "Cepeda propone ampliar la base tributaria y gravar a los ricos para financiar el gasto social【185161692428370†L229-L234】; De la Espriella quiere recortar impuestos y revivir los sectores minero y petrolero【185161692428370†L242-L245】."
       }
-    ]
+    ],
+    "dimension": "economía"
   },
   {
     "id": "Q04",
@@ -157,7 +160,8 @@
         "url": "https://www.reuters.com/world/americas/leftist-colombia-presidential-candidate-cepeda-pledges-step-up-economic-social-2026-05-28/",
         "what_it_supports": "Cepeda apoya reformas profundas y ha hablado de reescribir la constitución【861670868475338†L256-L270】."
       }
-    ]
+    ],
+    "dimension": "institucionalidad"
   },
   {
     "id": "Q05",
@@ -188,7 +192,8 @@
         "url": "https://www.reuters.com/business/finance/inflation-fight-again-putting-central-bank-independence-under-strain-2026-05-30/",
         "what_it_supports": "Describe cómo la presión política sobre bancos centrales puede erosionar su independencia y dificultar el control de la inflación【944143873490167†L194-L203】."
       }
-    ]
+    ],
+    "dimension": "economía"
   },
   {
     "id": "Q06",
@@ -225,7 +230,8 @@
         "url": "https://www.reuters.com/world/americas/colombia-outside-candidate-vows-military-offensive-security-2026-02-11/",
         "what_it_supports": "De la Espriella promete una ofensiva militar y aumentar el pie de fuerza【824602632538714†L224-L266】."
       }
-    ]
+    ],
+    "dimension": "seguridad y paz"
   },
   {
     "id": "Q07",
@@ -268,7 +274,8 @@
         "url": "https://www.reuters.com/world/americas/leftist-colombia-presidential-candidate-cepeda-pledges-step-up-economic-social-2026-05-28/",
         "what_it_supports": "Cepeda propone ampliar la reforma agraria y otorgar un millón de hectáreas a víctimas【609787524051082†L256-L263】."
       }
-    ]
+    ],
+    "dimension": "seguridad y paz"
   },
   {
     "id": "Q08",
@@ -305,7 +312,8 @@
         "url": "https://www.as-coa.org/articles/colombias-2026-presidential-elections-who-are-leading-candidates",
         "what_it_supports": "Cepeda apoya la paz total y programas de sustitución como parte de su enfoque de justicia social【708851537569663†L242-L245】."
       }
-    ]
+    ],
+    "dimension": "seguridad y paz"
   },
   {
     "id": "Q09",
@@ -342,7 +350,8 @@
         "url": "https://www.reuters.com/world/americas/colombians-head-polls-with-peace-efforts-economy-agenda-2026-05-29/",
         "what_it_supports": "Cepeda propone ampliar la base tributaria y programas sociales【185161692428370†L229-L234】, lo que sugiere fortalecer protección social."
       }
-    ]
+    ],
+    "dimension": "economía"
   },
   {
     "id": "Q10",
@@ -379,7 +388,8 @@
         "url": "https://www.reuters.com/world/americas/colombians-head-polls-with-peace-efforts-economy-agenda-2026-05-29/",
         "what_it_supports": "Cepeda quiere ampliar la base tributaria y financiar programas sociales【185161692428370†L229-L234】."
       }
-    ]
+    ],
+    "dimension": "economía"
   },
   {
     "id": "Q11",
@@ -416,7 +426,8 @@
         "url": "https://www.as-coa.org/articles/colombias-2026-presidential-elections-who-are-leading-candidates",
         "what_it_supports": "Cepeda respalda justicia social y programas sociales que podrían incluir vivienda asequible【708851537569663†L233-L251】."
       }
-    ]
+    ],
+    "dimension": "economía"
   },
   {
     "id": "Q12",
@@ -453,7 +464,8 @@
         "url": "https://www.reuters.com/world/americas/colombia-outside-candidate-vows-military-offensive-security-2026-02-11/",
         "what_it_supports": "De la Espriella defiende la inversión privada y la reducción del Estado【824602632538714†L224-L266】, lo que sugiere una postura favorable a la seguridad jurídica de la tierra."
       }
-    ]
+    ],
+    "dimension": "territorio"
   },
   {
     "id": "Q13",
@@ -490,7 +502,8 @@
         "url": "https://www.reuters.com/world/americas/colombia-outside-candidate-vows-military-offensive-security-2026-02-11/",
         "what_it_supports": "De la Espriella prioriza la seguridad, la inversión y la presencia militar en las regiones【824602632538714†L224-L266】, lo que sugiere mayor integración estatal."
       }
-    ]
+    ],
+    "dimension": "territorio"
   },
   {
     "id": "Q14",
@@ -527,7 +540,8 @@
         "url": "https://www.reuters.com/world/americas/colombia-outside-candidate-vows-military-offensive-security-2026-02-11/",
         "what_it_supports": "De la Espriella promete no negociar con ilegales y lanza ofensiva militar【824602632538714†L224-L266】."
       }
-    ]
+    ],
+    "dimension": "seguridad y paz"
   },
   {
     "id": "Q15",
@@ -558,7 +572,8 @@
         "url": "https://www.as-coa.org/articles/colombias-2026-presidential-elections-who-are-leading-candidates",
         "what_it_supports": "Describe las propuestas de De la Espriella de aumentar la fuerza pública y autorizar el uso de fuerza letal【708851537569663†L316-L327】, mientras que Cepeda prioriza la paz total y un enfoque de justicia social【708851537569663†L242-L245】."
       }
-    ]
+    ],
+    "dimension": "seguridad y paz"
   },
   {
     "id": "Q16",
@@ -595,7 +610,8 @@
         "url": "https://www.reuters.com/world/americas/colombia-outside-candidate-vows-military-offensive-security-2026-02-11/",
         "what_it_supports": "De la Espriella quiere reducir el Estado y los impuestos【824602632538714†L224-L266】, lo que sugiere un enfoque menos dependiente de subsidios."
       }
-    ]
+    ],
+    "dimension": "bienestar social"
   },
   {
     "id": "Q17",
@@ -632,7 +648,8 @@
         "url": "https://www.reuters.com/world/americas/colombia-outside-candidate-vows-military-offensive-security-2026-02-11/",
         "what_it_supports": "De la Espriella propone reducir el Estado y recortar impuestos【824602632538714†L224-L266】, lo que sugiere mayor participación del sector privado y educación técnica."
       }
-    ]
+    ],
+    "dimension": "educación"
   },
   {
     "id": "Q18",
@@ -669,7 +686,8 @@
         "url": "https://www.as-coa.org/articles/colombias-2026-presidential-elections-who-are-leading-candidates",
         "what_it_supports": "Cepeda apuesta por la justicia social, la educación y la salud【708851537569663†L233-L251】."
       }
-    ]
+    ],
+    "dimension": "territorio"
   },
   {
     "id": "Q19",
@@ -706,7 +724,8 @@
         "url": "https://www.as-coa.org/articles/colombias-2026-presidential-elections-who-are-leading-candidates",
         "what_it_supports": "Cepeda, como aliado de Petro, impulsa una agenda de paz y justicia social que implica mayor autonomía y regionalismo【708851537569663†L242-L245】."
       }
-    ]
+    ],
+    "dimension": "relaciones exteriores"
   },
   {
     "id": "Q20",
@@ -743,6 +762,7 @@
         "url": "https://www.as-coa.org/articles/colombias-2026-presidential-elections-who-are-leading-candidates",
         "what_it_supports": "Cepeda propone ampliar la inversión estatal en universidades y programas sociales【708851537569663†L233-L251】 y la reforma agraria【609787524051082†L256-L263】."
       }
-    ]
+    ],
+    "dimension": "institucionalidad"
   }
 ]
