@@ -71,9 +71,13 @@ function showQuestion(index) {
   const sliderContainer = document.createElement('div');
   sliderContainer.className = 'slider-container';
 
-  const leftLabel = document.createElement('div');
-  leftLabel.className = 'option-label option-left';
-  leftLabel.innerHTML = `<span class="side-marker">← Izquierda / 0</span><span>${escapeHtml(question.left_label)}</span>`;
+  const optionA = document.createElement('div');
+  optionA.className = 'option-card option-a';
+  optionA.innerHTML = `<span class="option-marker">Opción A</span><span>${escapeHtml(question.left_label)}</span>`;
+
+  const optionB = document.createElement('div');
+  optionB.className = 'option-card option-b';
+  optionB.innerHTML = `<span class="option-marker">Opción B</span><span>${escapeHtml(question.right_label)}</span>`;
 
   const sliderInput = document.createElement('input');
   sliderInput.type = 'range';
@@ -83,13 +87,14 @@ function showQuestion(index) {
   sliderInput.value = responses[index] ? responses[index].value * 10 : 5; // valor medio por defecto
   sliderInput.className = 'slider';
 
-  const rightLabel = document.createElement('div');
-  rightLabel.className = 'option-label option-right';
-  rightLabel.innerHTML = `<span class="side-marker">Derecha / 10 →</span><span>${escapeHtml(question.right_label)}</span>`;
+  const scaleLabels = document.createElement('div');
+  scaleLabels.className = 'scale-labels';
+  scaleLabels.innerHTML = '<span>A / 0</span><span>Neutral / 5</span><span>B / 10</span>';
 
-  sliderContainer.appendChild(leftLabel);
+  sliderContainer.appendChild(optionA);
+  sliderContainer.appendChild(optionB);
   sliderContainer.appendChild(sliderInput);
-  sliderContainer.appendChild(rightLabel);
+  sliderContainer.appendChild(scaleLabels);
 
   // Radio buttons para nivel de afectación
   const affectContainer = document.createElement('div');
@@ -332,12 +337,12 @@ function showResults() {
     const p1 = document.createElement('p');
     p1.style.margin = '4px 0';
     // Mostrar qué opción eligió el usuario
-    const extreme = userValue === 0.5 ? 'Neutral' : userValue < 0.5 ? 'Opción izquierda' : 'Opción derecha';
+    const extreme = userValue === 0.5 ? 'Neutral' : userValue < 0.5 ? 'Opción A' : 'Opción B';
     p1.textContent = `Tu respuesta: ${extreme}. Nivel de afectación: ${resp ? resp.affect : 'No me afecta/no sé'}`;
     item.appendChild(p1);
     const p2 = document.createElement('p');
     p2.style.margin = '4px 0';
-    p2.textContent = `El lado izquierdo se aproxima más a: ${q.candidate_alignment_left || 'Sin definición'}; el lado derecho se aproxima más a: ${q.candidate_alignment_right || 'Sin definición'}.`;
+    p2.textContent = `La Opción A se aproxima más a: ${q.candidate_alignment_left || 'Sin definición'}; la Opción B se aproxima más a: ${q.candidate_alignment_right || 'Sin definición'}.`;
     item.appendChild(p2);
     detailSection.appendChild(item);
   });

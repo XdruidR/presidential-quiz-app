@@ -66,26 +66,26 @@ h2 {
 
 .slider-container {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(180px, 1.25fr) minmax(0, 1fr);
-  align-items: center;
+  grid-template-columns: 1fr 1fr;
   gap: 12px;
   margin: 18px 0;
 }
 
-.option-label {
+.option-card {
   min-width: 0;
-  font-size: 0.92rem;
-  color: var(--muted);
+  min-height: 128px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fbfcff;
+  color: var(--text);
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 8px;
+  font-size: 0.92rem;
 }
 
-.option-right {
-  text-align: right;
-}
-
-.side-marker {
+.option-marker {
   display: inline-block;
   width: fit-content;
   padding: 3px 8px;
@@ -97,15 +97,30 @@ h2 {
   letter-spacing: 0.01em;
 }
 
-.option-right .side-marker {
-  align-self: flex-end;
-}
-
 .slider {
+  grid-column: 1 / -1;
   width: 100%;
   min-height: 34px;
-  margin: 0;
+  margin: 2px 0 0;
   accent-color: var(--primary);
+}
+
+.scale-labels {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.scale-labels span:nth-child(2) {
+  text-align: center;
+}
+
+.scale-labels span:last-child {
+  text-align: right;
 }
 
 .affect-container {
@@ -209,28 +224,19 @@ th {
 
   .slider-container {
     grid-template-columns: 1fr;
-    gap: 8px;
+    gap: 10px;
   }
 
-  .option-label,
-  .option-right {
-    text-align: left;
-  }
-
-  .option-left {
-    order: 1;
+  .option-card {
+    min-height: auto;
   }
 
   .slider {
-    order: 2;
+    grid-column: 1;
   }
 
-  .option-right {
-    order: 3;
-  }
-
-  .option-right .side-marker {
-    align-self: flex-start;
+  .scale-labels {
+    grid-column: 1;
   }
 
   .affect-container {
@@ -244,11 +250,7 @@ th {
   }
 
   #navigation {
-    position: sticky;
-    bottom: 0;
-    z-index: 10;
     padding: 10px 0;
-    background: linear-gradient(transparent, var(--bg) 35%);
   }
 
   button {
