@@ -43,6 +43,7 @@ async function loadQuestions() {
         // Intercambiar etiquetas y alineaciones
         [question.left_label, question.right_label] = [q.right_label, q.left_label];
         [question.left_cost_or_risk, question.right_cost_or_risk] = [q.right_cost_or_risk, q.left_cost_or_risk];
+        [question.left_connotation, question.right_connotation] = [q.right_connotation, q.left_connotation];
         [question.candidate_alignment_left, question.candidate_alignment_right] = [q.candidate_alignment_right, q.candidate_alignment_left];
       }
       return question;
@@ -74,11 +75,11 @@ function showQuestion(index) {
 
   const optionA = document.createElement('div');
   optionA.className = 'option-card option-a';
-  optionA.innerHTML = `<span class="option-marker">Opción A</span><span>${escapeHtml(question.left_label)}</span>`;
+  optionA.innerHTML = buildOptionCardHtml('Opción A', question.left_label, question.left_connotation);
 
   const optionB = document.createElement('div');
   optionB.className = 'option-card option-b';
-  optionB.innerHTML = `<span class="option-marker">Opción B</span><span>${escapeHtml(question.right_label)}</span>`;
+  optionB.innerHTML = buildOptionCardHtml('Opción B', question.right_label, question.right_connotation);
 
   const sliderInput = document.createElement('input');
   sliderInput.type = 'range';
@@ -147,6 +148,11 @@ function escapeHtml(text) {
   const div = document.createElement('div');
   div.textContent = text;
   return div.innerHTML;
+}
+
+function buildOptionCardHtml(marker, label, connotation) {
+  const hint = connotation ? `<span class="option-hint">${escapeHtml(connotation)}</span>` : '';
+  return `<span class="option-marker">${escapeHtml(marker)}</span><span>${escapeHtml(label)}</span>${hint}`;
 }
 
 function formatWeight(value) {

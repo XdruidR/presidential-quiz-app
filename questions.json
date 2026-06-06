@@ -41,7 +41,9 @@
         "what_it_supports": "De la Espriella planea recortar el tamaño del Estado y los impuestos para atraer inversión【824602632538714†L224-L266】."
       }
     ],
-    "dimension": "economía"
+    "dimension": "economía",
+    "left_connotation": "Prioriza reducción de pobreza, redistribución, servicios públicos y estabilidad social; acepta más presión fiscal.",
+    "right_connotation": "Prioriza confianza inversionista, menor deuda, menos impuestos y credibilidad macroeconómica; acepta redistribución más lenta."
   },
   {
     "id": "Q02",
@@ -79,7 +81,9 @@
         "what_it_supports": "De la Espriella planea reactivar la minería y el petróleo como eje económico【185161692428370†L242-L245】."
       }
     ],
-    "dimension": "energía y clima"
+    "dimension": "energía y clima",
+    "left_connotation": "Prioriza ingresos fiscales, empleo regional, regalías y seguridad energética; acepta impactos ambientales y dependencia futura.",
+    "right_connotation": "Prioriza clima, diversificación productiva y sostenibilidad de largo plazo; acepta riesgos fiscales y laborales de corto plazo."
   },
   {
     "id": "Q03",
@@ -123,7 +127,9 @@
         "what_it_supports": "Cepeda propone ampliar la base tributaria y gravar a los ricos para financiar el gasto social【185161692428370†L229-L234】; De la Espriella quiere recortar impuestos y revivir los sectores minero y petrolero【185161692428370†L242-L245】."
       }
     ],
-    "dimension": "economía"
+    "dimension": "economía",
+    "left_connotation": "Prioriza beneficios locales, derechos laborales, protección ambiental y participación comunitaria; acepta menor apetito inversor.",
+    "right_connotation": "Prioriza crecimiento, empleo y competitividad para atraer capital; acepta protecciones laborales y ambientales más débiles."
   },
   {
     "id": "Q04",
@@ -161,7 +167,9 @@
         "what_it_supports": "Cepeda apoya reformas profundas y ha hablado de reescribir la constitución【861670868475338†L256-L270】."
       }
     ],
-    "dimension": "institucionalidad"
+    "dimension": "institucionalidad",
+    "left_connotation": "Prioriza certeza jurídica, reglas conocidas y estabilidad institucional; acepta que cambios estructurales avancen más despacio.",
+    "right_connotation": "Prioriza reformas profundas y transformación social; acepta incertidumbre institucional durante el proceso."
   },
   {
     "id": "Q05",
@@ -193,7 +201,9 @@
         "what_it_supports": "Describe cómo la presión política sobre bancos centrales puede erosionar su independencia y dificultar el control de la inflación【944143873490167†L194-L203】."
       }
     ],
-    "dimension": "economía"
+    "dimension": "economía",
+    "left_connotation": "Prioriza control de inflación, credibilidad y estabilidad de largo plazo; acepta tasas altas que pueden frenar empleo y crédito.",
+    "right_connotation": "Prioriza empleo, acceso a crédito y estímulo económico rápido; acepta riesgo de inflación y pérdida de credibilidad monetaria."
   },
   {
     "id": "Q06",
@@ -231,7 +241,9 @@
         "what_it_supports": "De la Espriella promete una ofensiva militar y aumentar el pie de fuerza【824602632538714†L224-L266】."
       }
     ],
-    "dimension": "seguridad y paz"
+    "dimension": "seguridad y paz",
+    "left_connotation": "Prioriza respuesta inmediata frente a extorsión, robo y control criminal; acepta riesgos de abuso y hacinamiento carcelario.",
+    "right_connotation": "Prioriza causas sociales, oportunidades juveniles y cohesión comunitaria; acepta que los resultados pueden tardar."
   },
   {
     "id": "Q07",
@@ -275,7 +287,9 @@
         "what_it_supports": "Cepeda propone ampliar la reforma agraria y otorgar un millón de hectáreas a víctimas【609787524051082†L256-L263】."
       }
     ],
-    "dimension": "seguridad y paz"
+    "dimension": "seguridad y paz",
+    "left_connotation": "Prioriza control territorial rápido y disuasión armada; acepta riesgo de daño civil y escalamiento del conflicto.",
+    "right_connotation": "Prioriza paz duradera, inclusión territorial y reformas rurales; acepta progreso lento y percepción de impunidad."
   },
   {
     "id": "Q08",
@@ -313,7 +327,9 @@
         "what_it_supports": "Cepeda apoya la paz total y programas de sustitución como parte de su enfoque de justicia social【708851537569663†L242-L245】."
       }
     ],
-    "dimension": "seguridad y paz"
+    "dimension": "seguridad y paz",
+    "left_connotation": "Prioriza reducir rápidamente la producción de drogas; acepta choque económico para familias rurales y posible resiembra.",
+    "right_connotation": "Prioriza medios de vida rurales y transición sostenible; acepta alto costo, corrupción posible y resultados lentos."
   },
   {
     "id": "Q09",
@@ -351,7 +367,9 @@
         "what_it_supports": "Cepeda propone ampliar la base tributaria y programas sociales【185161692428370†L229-L234】, lo que sugiere fortalecer protección social."
       }
     ],
-    "dimension": "economía"
+    "dimension": "economía",
+    "left_connotation": "Prioriza creación de empleo formal y menores costos para contratar; acepta riesgo de trabajo más precario.",
+    "right_connotation": "Prioriza seguridad laboral, contratos formales y protección social; acepta costos de contratación más altos."
   },
   {
     "id": "Q10",
@@ -389,7 +407,9 @@
         "what_it_supports": "Cepeda quiere ampliar la base tributaria y financiar programas sociales【185161692428370†L229-L234】."
       }
     ],
-    "dimension": "economía"
+    "dimension": "economía",
+    "left_connotation": "Prioriza emprendimiento, supervivencia de pequeñas empresas y menos papeleo; acepta menor recaudo y protecciones débiles.",
+    "right_connotation": "Prioriza equidad tributaria, protección de trabajadores y capacidad pública; acepta presión sobre negocios pequeños."
   },
   {
     "id": "Q11",
@@ -427,7 +447,9 @@
         "what_it_supports": "Cepeda respalda justicia social y programas sociales que podrían incluir vivienda asequible【708851537569663†L233-L251】."
       }
     ],
-    "dimension": "economía"
+    "dimension": "economía",
+    "left_connotation": "Prioriza inversión, seguridad jurídica y aumento de oferta de vivienda; acepta riesgos de precios altos y segregación.",
+    "right_connotation": "Prioriza inquilinos y acceso a vivienda asequible; acepta riesgo de menor inversión y oferta."
   },
   {
     "id": "Q12",
@@ -465,7 +487,9 @@
         "what_it_supports": "De la Espriella defiende la inversión privada y la reducción del Estado【824602632538714†L224-L266】, lo que sugiere una postura favorable a la seguridad jurídica de la tierra."
       }
     ],
-    "dimension": "territorio"
+    "dimension": "territorio",
+    "left_connotation": "Prioriza inversión rural, productividad y estabilidad de la propiedad; acepta que la desigualdad de tierra persista.",
+    "right_connotation": "Prioriza justicia histórica, inclusión campesina y reparación a víctimas; acepta incertidumbre legal y fiscal."
   },
   {
     "id": "Q13",
@@ -503,7 +527,9 @@
         "what_it_supports": "De la Espriella prioriza la seguridad, la inversión y la presencia militar en las regiones【824602632538714†L224-L266】, lo que sugiere mayor integración estatal."
       }
     ],
-    "dimension": "territorio"
+    "dimension": "territorio",
+    "left_connotation": "Prioriza derechos culturales, control territorial y protección ambiental local; acepta demoras en proyectos y gobernanza fragmentada.",
+    "right_connotation": "Prioriza infraestructura, seguridad, servicios y conexión con economías regionales; acepta riesgos para autonomía colectiva."
   },
   {
     "id": "Q14",
@@ -541,7 +567,9 @@
         "what_it_supports": "De la Espriella promete no negociar con ilegales y lanza ofensiva militar【824602632538714†L224-L266】."
       }
     ],
-    "dimension": "seguridad y paz"
+    "dimension": "seguridad y paz",
+    "left_connotation": "Prioriza castigo, disuasión y justicia para víctimas que rechazan concesiones; acepta riesgo de prolongar la guerra.",
+    "right_connotation": "Prioriza paz, verdad, reparación y reintegración; acepta percepción de impunidad y concesiones difíciles."
   },
   {
     "id": "Q15",
@@ -573,7 +601,9 @@
         "what_it_supports": "Describe las propuestas de De la Espriella de aumentar la fuerza pública y autorizar el uso de fuerza letal【708851537569663†L316-L327】, mientras que Cepeda prioriza la paz total y un enfoque de justicia social【708851537569663†L242-L245】."
       }
     ],
-    "dimension": "seguridad y paz"
+    "dimension": "seguridad y paz",
+    "left_connotation": "Prioriza capacidad operativa, equipo y respuesta inmediata del Estado; acepta riesgo de abusos y militarización.",
+    "right_connotation": "Prioriza legitimidad, derechos humanos, transparencia y confianza comunitaria; acepta posible debilidad inicial frente al crimen."
   },
   {
     "id": "Q16",
@@ -611,7 +641,9 @@
         "what_it_supports": "De la Espriella quiere reducir el Estado y los impuestos【824602632538714†L224-L266】, lo que sugiere un enfoque menos dependiente de subsidios."
       }
     ],
-    "dimension": "bienestar social"
+    "dimension": "bienestar social",
+    "left_connotation": "Prioriza dignidad en la vejez y cobertura para personas sin ahorro suficiente; acepta mayor presión fiscal.",
+    "right_connotation": "Prioriza sostenibilidad financiera y responsabilidad individual; acepta exclusión de trabajadores informales o pobres."
   },
   {
     "id": "Q17",
@@ -649,7 +681,9 @@
         "what_it_supports": "De la Espriella propone reducir el Estado y recortar impuestos【824602632538714†L224-L266】, lo que sugiere mayor participación del sector privado y educación técnica."
       }
     ],
-    "dimension": "educación"
+    "dimension": "educación",
+    "left_connotation": "Prioriza igualdad de acceso y movilidad social de largo plazo; acepta carga fiscal y posible desajuste con empleos disponibles.",
+    "right_connotation": "Prioriza empleabilidad rápida, formación técnica y vínculo con empresas; acepta desigualdad de acceso y captura privada."
   },
   {
     "id": "Q18",
@@ -687,7 +721,9 @@
         "what_it_supports": "Cepeda apuesta por la justicia social, la educación y la salud【708851537569663†L233-L251】."
       }
     ],
-    "dimension": "territorio"
+    "dimension": "territorio",
+    "left_connotation": "Prioriza conectividad, productividad, empleo visible y crecimiento regional; acepta corrupción o beneficios sociales desiguales.",
+    "right_connotation": "Prioriza necesidades locales, salud, educación y capital humano; acepta aumentos de productividad más lentos."
   },
   {
     "id": "Q19",
@@ -725,7 +761,9 @@
         "what_it_supports": "Cepeda, como aliado de Petro, impulsa una agenda de paz y justicia social que implica mayor autonomía y regionalismo【708851537569663†L242-L245】."
       }
     ],
-    "dimension": "relaciones exteriores"
+    "dimension": "relaciones exteriores",
+    "left_connotation": "Prioriza cooperación militar, confianza inversionista y vínculos comerciales establecidos; acepta dependencia y menor flexibilidad diplomática.",
+    "right_connotation": "Prioriza soberanía, diversificación diplomática e integración regional; acepta riesgo de perder apoyo de aliados poderosos."
   },
   {
     "id": "Q20",
@@ -763,6 +801,8 @@
         "what_it_supports": "Cepeda propone ampliar la inversión estatal en universidades y programas sociales【708851537569663†L233-L251】 y la reforma agraria【609787524051082†L256-L263】."
       }
     ],
-    "dimension": "institucionalidad"
+    "dimension": "institucionalidad",
+    "left_connotation": "Prioriza eficiencia, menores impuestos y menos trámites; acepta menor capacidad pública y desigualdad en acceso a servicios.",
+    "right_connotation": "Prioriza cumplimiento de derechos sociales, regulación y servicios públicos; acepta costo fiscal, burocracia y corrupción posible."
   }
 ]
