@@ -151,8 +151,11 @@ function escapeHtml(text) {
 }
 
 function buildOptionCardHtml(marker, label, connotation) {
-  const hint = connotation ? `<span class="option-hint">${escapeHtml(connotation)}</span>` : '';
-  return `<span class="option-marker">${escapeHtml(marker)}</span><span>${escapeHtml(label)}</span>${hint}`;
+  const escapedMarker = escapeHtml(marker);
+  const hint = connotation
+    ? `<details class="option-hint"><summary aria-label="Ver matiz de la ${escapedMarker}">ℹ️</summary><span>${escapeHtml(connotation)}</span></details>`
+    : '';
+  return `<span class="option-marker">${escapedMarker}</span><span>${escapeHtml(label)}</span>${hint}`;
 }
 
 function formatWeight(value) {

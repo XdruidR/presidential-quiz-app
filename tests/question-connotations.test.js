@@ -49,7 +49,7 @@ for (const q of questions) {
 
 assert.strictEqual(
   context.buildOptionCardHtml('Opción A', 'Reducir impuestos', 'Puede acelerar inversión, pero reduce recursos públicos.'),
-  '<span class="option-marker">Opción A</span><span>Reducir impuestos</span><span class="option-hint">Puede acelerar inversión, pero reduce recursos públicos.</span>'
+  '<span class="option-marker">Opción A</span><span>Reducir impuestos</span><details class="option-hint"><summary aria-label="Ver matiz de la Opción A">ℹ️</summary><span>Puede acelerar inversión, pero reduce recursos públicos.</span></details>'
 );
 
 console.log('question-connotations tests passed');
