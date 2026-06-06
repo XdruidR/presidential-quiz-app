@@ -11,6 +11,7 @@
 // Variables globales para almacenar preguntas y respuestas
 let questions = [];
 let currentIndex = 0;
+let useWeightedResults = false;
 const responses = [];
 
 // Referencias a elementos del DOM
@@ -148,6 +149,10 @@ function escapeHtml(text) {
   return div.innerHTML;
 }
 
+function formatWeight(value) {
+  return Number.isInteger(value) ? `${value}` : value.toFixed(1).replace('.', ',');
+}
+
 // Manejar clic en «Siguiente»
 nextBtn.addEventListener('click', () => {
   handleNavigation(1);
@@ -194,59 +199,118 @@ function saveCurrentResponse() {
   responses[currentIndex] = { value, affect };
 }
 
-// Calcular y mostrar resultados
-function showResults() {
-  // Calcular puntajes
-  const candidateScores = {};
-  const candidateCounts = {};
-  const themeScores = {};
-  const themeCounts = {};
+function getAffectWeight(affect) {
+  const weights = {
+    'Me afecta mucho': 2,
+    'Me afecta algo': 1,
+    'No me afecta/no sé': 0.5,
+  };
+  return weights[affect] || 0.5;
+}
 
-  questions.forEach((q, i) => {
-    const resp = responses[i] || { value: 0.5, affect: 'No me afecta/no sé' };
+function calculateAffinityResults(sourceQuestions, sourceResponses, weighted = false) {
+  const candidateScores = {};
+  const candidateDenominators = {};
+  const candidateQuestionCounts = {};
+  const themeScores = {};
+  const themeDenominators = {};
+  const themeQuestionCounts = {};
+
+  sourceQuestions.forEach((q, i) => {
+    const resp = sourceResponses[i] || { value: 0.5, affect: 'No me afecta/no sé' };
     const value = resp.value;
-    // Score for left candidate: 1 - value; right candidate: value
-    const leftCand = q.candidate_alignment_left;
-    const rightCand = q.candidate_alignment_right;
-    if (leftCand && leftCand !== 'Unclear') {
-      candidateScores[leftCand] = (candidateScores[leftCand] || 0) + (1 - value);
-      candidateCounts[leftCand] = (candidateCounts[leftCand] || 0) + 1;
-    }
-    if (rightCand && rightCand !== 'Unclear') {
-      candidateScores[rightCand] = (candidateScores[rightCand] || 0) + value;
-      candidateCounts[rightCand] = (candidateCounts[rightCand] || 0) + 1;
-    }
-    // Theme
+    const factor = weighted ? getAffectWeight(resp.affect) : 1;
+    const optionACand = q.candidate_alignment_left;
+    const optionBCand = q.candidate_alignment_right;
     const theme = q.theme;
+
+    if (optionACand && optionACand !== 'Unclear') {
+      candidateScores[optionACand] = (candidateScores[optionACand] || 0) + (1 - value) * factor;
+      candidateDenominators[optionACand] = (candidateDenominators[optionACand] || 0) + factor;
+      candidateQuestionCounts[optionACand] = (candidateQuestionCounts[optionACand] || 0) + 1;
+    }
+    if (optionBCand && optionBCand !== 'Unclear') {
+      candidateScores[optionBCand] = (candidateScores[optionBCand] || 0) + value * factor;
+      candidateDenominators[optionBCand] = (candidateDenominators[optionBCand] || 0) + factor;
+      candidateQuestionCounts[optionBCand] = (candidateQuestionCounts[optionBCand] || 0) + 1;
+    }
+
     if (theme) {
       themeScores[theme] = themeScores[theme] || {};
-      themeCounts[theme] = themeCounts[theme] || {};
-      if (leftCand && leftCand !== 'Unclear') {
-        themeScores[theme][leftCand] = (themeScores[theme][leftCand] || 0) + (1 - value);
-        themeCounts[theme][leftCand] = (themeCounts[theme][leftCand] || 0) + 1;
+      themeDenominators[theme] = themeDenominators[theme] || {};
+      themeQuestionCounts[theme] = themeQuestionCounts[theme] || {};
+      if (optionACand && optionACand !== 'Unclear') {
+        themeScores[theme][optionACand] = (themeScores[theme][optionACand] || 0) + (1 - value) * factor;
+        themeDenominators[theme][optionACand] = (themeDenominators[theme][optionACand] || 0) + factor;
+        themeQuestionCounts[theme][optionACand] = (themeQuestionCounts[theme][optionACand] || 0) + 1;
       }
-      if (rightCand && rightCand !== 'Unclear') {
-        themeScores[theme][rightCand] = (themeScores[theme][rightCand] || 0) + value;
-        themeCounts[theme][rightCand] = (themeCounts[theme][rightCand] || 0) + 1;
+      if (optionBCand && optionBCand !== 'Unclear') {
+        themeScores[theme][optionBCand] = (themeScores[theme][optionBCand] || 0) + value * factor;
+        themeDenominators[theme][optionBCand] = (themeDenominators[theme][optionBCand] || 0) + factor;
+        themeQuestionCounts[theme][optionBCand] = (themeQuestionCounts[theme][optionBCand] || 0) + 1;
       }
     }
   });
-  // Calcular porcentajes
+
   const candidatePercentages = {};
   for (const cand of Object.keys(candidateScores)) {
     const total = candidateScores[cand];
-    const count = candidateCounts[cand];
-    candidatePercentages[cand] = count > 0 ? Math.round((total / count) * 100) : 0;
+    const denominator = candidateDenominators[cand];
+    candidatePercentages[cand] = denominator > 0 ? Math.round((total / denominator) * 100) : 0;
   }
+
+  return {
+    weighted,
+    candidatePercentages,
+    candidateQuestionCounts,
+    candidateDenominators,
+    themeScores,
+    themeDenominators,
+    themeQuestionCounts,
+  };
+}
+
+// Calcular y mostrar resultados
+function showResults() {
+  const results = calculateAffinityResults(questions, responses, useWeightedResults);
+  const {
+    candidatePercentages,
+    candidateQuestionCounts,
+    candidateDenominators,
+    themeScores,
+    themeDenominators,
+  } = results;
   // Preparar HTML de resultados
   resultsContainer.innerHTML = '';
   const resultsHeader = document.createElement('h2');
   resultsHeader.textContent = 'Resultados generales';
   resultsContainer.appendChild(resultsHeader);
+
+  const weightingControl = document.createElement('label');
+  weightingControl.className = 'weighting-toggle';
+  const weightingCheckbox = document.createElement('input');
+  weightingCheckbox.type = 'checkbox';
+  weightingCheckbox.checked = useWeightedResults;
+  weightingCheckbox.addEventListener('change', () => {
+    useWeightedResults = weightingCheckbox.checked;
+    showResults();
+  });
+  const weightingText = document.createElement('span');
+  weightingText.textContent = 'Aplicar ponderación por importancia personal';
+  weightingControl.appendChild(weightingCheckbox);
+  weightingControl.appendChild(weightingText);
+  resultsContainer.appendChild(weightingControl);
+
+  const weightingNote = document.createElement('p');
+  weightingNote.className = 'info-text';
+  weightingNote.textContent = useWeightedResults
+    ? 'Modo ponderado: “Me afecta mucho” cuenta ×2, “Me afecta algo” ×1 y “No me afecta/no sé” ×0,5.'
+    : 'Modo sin ponderar: todas las preguntas cuentan igual. Activa la ponderación para dar más peso a los temas que más te afectan.';
+  resultsContainer.appendChild(weightingNote);
   // Tabla de afinidad
   const table = document.createElement('table');
   const headerRow = document.createElement('tr');
-  ['Candidato', 'Afinidad (%)', 'Preguntas'].forEach((text) => {
+  ['Candidato', 'Afinidad (%)', useWeightedResults ? 'Preguntas / peso' : 'Preguntas'].forEach((text) => {
     const th = document.createElement('th');
     th.textContent = text;
     headerRow.appendChild(th);
@@ -259,7 +323,9 @@ function showResults() {
     const tdPct = document.createElement('td');
     tdPct.textContent = `${candidatePercentages[cand]} %`;
     const tdCount = document.createElement('td');
-    tdCount.textContent = `${candidateCounts[cand] || 0}`;
+    tdCount.textContent = useWeightedResults
+      ? `${candidateQuestionCounts[cand] || 0} preguntas · peso ${formatWeight(candidateDenominators[cand] || 0)}`
+      : `${candidateQuestionCounts[cand] || 0}`;
     tr.appendChild(tdCand);
     tr.appendChild(tdPct);
     tr.appendChild(tdCount);
@@ -287,8 +353,8 @@ function showResults() {
     let bestScore = -1;
     for (const cand of Object.keys(themeCandidates)) {
       const total = themeCandidates[cand];
-      const count = themeCounts[theme][cand];
-      const avg = count > 0 ? total / count : 0;
+      const denominator = themeDenominators[theme][cand];
+      const avg = denominator > 0 ? total / denominator : 0;
       if (avg > bestScore) {
         bestScore = avg;
         bestCand = cand;

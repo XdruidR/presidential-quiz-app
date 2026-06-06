@@ -146,6 +146,25 @@ h2 {
   margin-top: 14px;
 }
 
+.weighting-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 6px 0 0;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fbfcff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.weighting-toggle input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary);
+}
+
 #navigation {
   width: min(100%, 820px);
   margin: 16px auto;
