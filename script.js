@@ -9,7 +9,7 @@
  */
 
 // Variables globales para almacenar preguntas y respuestas
-const APP_VERSION = 'cool-results-1';
+const APP_VERSION = 'compact-ui-1';
 let questions = [];
 let currentIndex = 0;
 let useWeightedResults = false;
@@ -126,9 +126,11 @@ function showQuestion(index) {
     }
     const lbl = document.createElement('label');
     lbl.htmlFor = id;
-    lbl.style.marginRight = '8px';
-    lbl.textContent = text;
-    affectContainer.appendChild(rb);
+    lbl.className = 'affect-option';
+    const labelText = document.createElement('span');
+    labelText.textContent = text;
+    lbl.appendChild(rb);
+    lbl.appendChild(labelText);
     affectContainer.appendChild(lbl);
   });
 
