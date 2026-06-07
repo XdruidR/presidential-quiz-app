@@ -127,18 +127,48 @@ h2 {
   grid-row: 1 / 3;
 }
 
-.demo-preference .vertical-slider,
-.demo-preference .preference-arrow {
-  pointer-events: none;
-}
-
-.demo-preference .vertical-slider:disabled,
-.demo-preference .preference-arrow:disabled {
-  opacity: 1;
-}
-
 .demo-card-a { border-top: 4px solid var(--accent-a); }
 .demo-card-b { border-top: 4px solid var(--accent-b); }
+
+.progress-tracker {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px 12px;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  border: 1px solid rgba(15, 23, 42, 0.10);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.70);
+}
+
+.progress-label,
+.progress-percent {
+  font-size: 0.82rem;
+  font-weight: 850;
+  color: #334155;
+}
+
+.progress-percent {
+  color: var(--muted);
+}
+
+.progress-bar {
+  grid-column: 1 / -1;
+  height: 9px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.10);
+}
+
+.progress-fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--accent-a), var(--accent-b));
+  transition: width 220ms ease;
+}
 
 .question-title {
   position: relative;

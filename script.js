@@ -9,7 +9,7 @@
  */
 
 // Variables globales para almacenar preguntas y respuestas
-const APP_VERSION = 'ux-source-framing-1';
+const APP_VERSION = 'ux-progress-demo-1';
 let questions = [];
 let currentIndex = 0;
 let useWeightedResults = false;
@@ -28,8 +28,35 @@ const resultsContainer = document.getElementById('results-container');
 // Inicialización
 window.addEventListener('DOMContentLoaded', async () => {
   await loadQuestions();
+  initLandingDemoControls();
   showLanding();
 });
+
+function initLandingDemoControls() {
+  const demoPreference = document.querySelector('.demo-preference');
+  if (!demoPreference) {
+    return;
+  }
+  const sliderInput = demoPreference.querySelector('input[type="range"]');
+  const optionA = document.querySelector('.demo-card-a');
+  const optionB = document.querySelector('.demo-card-b');
+  const arrowUp = demoPreference.querySelector('.arrow-up');
+  const arrowDown = demoPreference.querySelector('.arrow-down');
+  if (!sliderInput || !optionA || !optionB) {
+    return;
+  }
+
+  const adjustDemoSlider = (delta) => {
+    const nextValue = Math.max(Number(sliderInput.min), Math.min(Number(sliderInput.max), Number(sliderInput.value) + delta));
+    sliderInput.value = String(nextValue);
+    updateSliderVisualState(sliderInput, optionA, optionB, demoPreference);
+  };
+
+  arrowUp?.addEventListener('click', () => adjustDemoSlider(-1));
+  arrowDown?.addEventListener('click', () => adjustDemoSlider(1));
+  sliderInput.addEventListener('input', () => updateSliderVisualState(sliderInput, optionA, optionB, demoPreference));
+  updateSliderVisualState(sliderInput, optionA, optionB, demoPreference);
+}
 
 function showLanding() {
   if (landingContainer) {
@@ -92,6 +119,8 @@ function showQuestion(index) {
   resultsContainer.classList.add('hidden');
 
   // Crear elementos para la pregunta
+  const progressEl = buildProgressTracker(index, questions.length);
+
   const titleEl = document.createElement('div');
   titleEl.className = 'question-title';
   titleEl.textContent = `${index + 1}. ${question.title}`;
@@ -206,6 +235,7 @@ function showQuestion(index) {
   infoEl.textContent = `Tema: ${question.theme}`;
 
   // Agregar al contenedor
+  quizContainer.appendChild(progressEl);
   quizContainer.appendChild(titleEl);
   quizContainer.appendChild(introEl);
   quizContainer.appendChild(sliderContainer);
@@ -215,6 +245,37 @@ function showQuestion(index) {
   // Ajustar botones
   prevBtn.disabled = index === 0;
   nextBtn.textContent = index === questions.length - 1 ? 'Finalizar' : 'Siguiente';
+}
+
+function buildProgressTracker(index, total) {
+  const safeTotal = Math.max(total || 0, 1);
+  const current = Math.min(Math.max(index + 1, 1), safeTotal);
+  const percent = Math.round((current / safeTotal) * 100);
+  const wrapper = document.createElement('div');
+  wrapper.className = 'progress-tracker';
+  wrapper.setAttribute('role', 'status');
+  wrapper.setAttribute('aria-label', `Progreso del cuestionario: pregunta ${current} de ${safeTotal}`);
+
+  const label = document.createElement('span');
+  label.className = 'progress-label';
+  label.textContent = `Pregunta ${current} de ${safeTotal}`;
+
+  const percentLabel = document.createElement('span');
+  percentLabel.className = 'progress-percent';
+  percentLabel.textContent = `${percent}% completado`;
+
+  const bar = document.createElement('div');
+  bar.className = 'progress-bar';
+  bar.setAttribute('aria-hidden', 'true');
+  const fill = document.createElement('span');
+  fill.className = 'progress-fill';
+  fill.style.width = `${percent}%`;
+  bar.appendChild(fill);
+
+  wrapper.appendChild(label);
+  wrapper.appendChild(percentLabel);
+  wrapper.appendChild(bar);
+  return wrapper;
 }
 
 function updateSliderVisualState(sliderInput, optionA, optionB, verticalPreference) {
