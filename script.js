@@ -9,7 +9,7 @@
  */
 
 // Variables globales para almacenar preguntas y respuestas
-const APP_VERSION = 'ux-landing-vertical-1';
+const APP_VERSION = 'ux-side-slider-1';
 let questions = [];
 let currentIndex = 0;
 let useWeightedResults = false;
@@ -122,16 +122,47 @@ function showQuestion(index) {
   sliderInput.setAttribute('aria-label', 'Selector vertical de preferencia: arriba Opción A, abajo Opción B');
 
   const verticalPreference = document.createElement('div');
-  verticalPreference.className = 'vertical-preference';
-  verticalPreference.innerHTML = '<span class="preference-arrow arrow-up" aria-hidden="true">↑</span><span class="neutral-chip">Neutral</span><span class="preference-arrow arrow-down" aria-hidden="true">↓</span>';
-  verticalPreference.appendChild(sliderInput);
+  verticalPreference.className = 'vertical-preference side-preference';
+
+  const arrowUp = document.createElement('button');
+  arrowUp.type = 'button';
+  arrowUp.className = 'preference-arrow arrow-up';
+  arrowUp.textContent = '↑';
+  arrowUp.setAttribute('aria-label', 'Mover preferencia hacia Opción A');
+
+  const arrowDown = document.createElement('button');
+  arrowDown.type = 'button';
+  arrowDown.className = 'preference-arrow arrow-down';
+  arrowDown.textContent = '↓';
+  arrowDown.setAttribute('aria-label', 'Mover preferencia hacia Opción B');
+
+  const sliderRail = document.createElement('div');
+  sliderRail.className = 'vertical-slider-rail';
+  const neutralChip = document.createElement('span');
+  neutralChip.className = 'neutral-chip';
+  neutralChip.textContent = '5';
+  sliderRail.appendChild(sliderInput);
+  sliderRail.appendChild(neutralChip);
+
+  verticalPreference.appendChild(arrowUp);
+  verticalPreference.appendChild(sliderRail);
+  verticalPreference.appendChild(arrowDown);
 
   const scaleLabels = document.createElement('div');
   scaleLabels.className = 'scale-labels vertical-scale-labels';
   scaleLabels.innerHTML = '<span>A / 0</span><span>Neutral / 5</span><span>B / 10</span>';
 
-  sliderContainer.appendChild(optionA);
+  const adjustSlider = (delta) => {
+    const nextValue = Math.max(Number(sliderInput.min), Math.min(Number(sliderInput.max), Number(sliderInput.value) + delta));
+    sliderInput.value = String(nextValue);
+    updateSliderVisualState(sliderInput, optionA, optionB, verticalPreference);
+  };
+
+  arrowUp.addEventListener('click', () => adjustSlider(-1));
+  arrowDown.addEventListener('click', () => adjustSlider(1));
+
   sliderContainer.appendChild(verticalPreference);
+  sliderContainer.appendChild(optionA);
   sliderContainer.appendChild(optionB);
   sliderContainer.appendChild(scaleLabels);
 

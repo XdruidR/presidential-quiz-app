@@ -14,12 +14,15 @@ assert.match(index, /id="start-quiz-btn"/, 'landing page must have a start butto
 
 assert.ok(script.includes('function showLanding()'), 'script should explicitly show the landing state');
 assert.ok(script.includes('function startQuiz()'), 'script should start quiz from the landing screen');
-assert.ok(script.includes("sliderInput.className = 'slider vertical-slider'"), 'question slider should use vertical slider class');
+assert.ok(script.includes("verticalPreference.className = 'vertical-preference side-preference'"), 'question slider rail should sit beside the option cards');
+assert.ok(script.includes("arrowUp.addEventListener('click', () => adjustSlider(-1))"), 'up arrow should move toward option A');
+assert.ok(script.includes("arrowDown.addEventListener('click', () => adjustSlider(1))"), 'down arrow should move toward option B');
 assert.ok(script.includes('appendPdfExportControls(resultsContainer, results)'), 'results should render PDF export controls');
 assert.ok(script.includes('window.print()'), 'PDF export should use browser print-to-PDF');
 
 assert.match(css, /#navigation\.hidden/, 'hidden navigation should override the #navigation display rule');
-assert.match(css, /\.vertical-preference/, 'vertical preference rail should be styled');
+assert.match(css, /grid-template-columns: 58px minmax\(0, 1fr\)/, 'slider rail should use a narrow left column beside the option cards');
+assert.match(css, /grid-row: 1 \/ 3/, 'slider rail should span both option card rows');
 assert.match(css, /\.preference-arrow/, 'direction arrows should be styled');
 assert.match(css, /@media print/, 'print/PDF summary should have print styles');
 
