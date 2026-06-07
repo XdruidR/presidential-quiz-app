@@ -31,6 +31,7 @@ function loadScriptContext() {
 }
 
 const context = loadScriptContext();
+const scriptSource = fs.readFileSync(path.join(__dirname, '..', 'script.js'), 'utf8');
 
 assert.strictEqual(context.getQuestionDimension({ dimension: 'security', theme: 'Seguridad' }), 'security');
 assert.strictEqual(context.getQuestionDimension({ theme: 'Política fiscal y gasto social' }), 'Política fiscal y gasto social');
@@ -54,5 +55,12 @@ assert.strictEqual(results.dimensionPercentages.security['De La Espriella'], 100
 
 const lowConfidence = context.getLowConfidenceQuestions(questions);
 assert.deepStrictEqual(lowConfidence.map((q) => q.id), ['Q04']);
+
+assert(scriptSource.includes('Preguntas con evidencia menos directa'));
+assert(scriptSource.includes('Solidez de la evidencia'));
+assert(scriptSource.includes('alineaciones aproximadas basadas en temas relacionados'));
+assert(!scriptSource.includes('correspondencia inferida'));
+assert(!scriptSource.includes('son inferidas'));
+assert(!scriptSource.includes('es inferida, débil'));
 
 console.log('result-transparency tests passed');

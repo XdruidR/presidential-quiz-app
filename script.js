@@ -9,7 +9,7 @@
  */
 
 // Variables globales para almacenar preguntas y respuestas
-const APP_VERSION = 'ux-side-slider-3';
+const APP_VERSION = 'ux-source-framing-1';
 let questions = [];
 let currentIndex = 0;
 let useWeightedResults = false;
@@ -562,7 +562,7 @@ function buildPrintableSummary(results) {
   wrapper.appendChild(title);
 
   const warning = document.createElement('p');
-  warning.textContent = 'No es una recomendación de voto. Algunas correspondencias son inferidas y deben leerse con cautela.';
+  warning.textContent = 'No es una recomendación de voto. Algunas alineaciones son aproximadas cuando no existe una declaración pública exacta sobre el punto específico.';
   wrapper.appendChild(warning);
 
   const candidates = Object.entries(results.candidatePercentages || {})
@@ -589,7 +589,7 @@ function buildPrintableSummary(results) {
 
   const lowConfidenceCount = getLowConfidenceQuestions(questions).length;
   const lowNote = document.createElement('p');
-  lowNote.textContent = `${lowConfidenceCount} preguntas tienen baja confianza o correspondencia inferida.`;
+  lowNote.textContent = `${lowConfidenceCount} preguntas tienen evidencia menos directa o alineación aproximada.`;
   wrapper.appendChild(lowNote);
   return wrapper;
 }
@@ -766,17 +766,17 @@ function showResults() {
   themeSection.appendChild(themeTable);
   resultsContainer.appendChild(themeSection);
 
-  // Preguntas con baja confianza o sin correspondencia clara
+  // Preguntas con evidencia menos directa o sin correspondencia clara
   const lowConfidenceQuestions = getLowConfidenceQuestions(questions);
   if (lowConfidenceQuestions.length > 0) {
     const lowSection = document.createElement('div');
     lowSection.className = 'results-section';
     const lowHeader = document.createElement('h2');
-    lowHeader.textContent = 'Preguntas de baja confianza o sin correspondencia clara';
+    lowHeader.textContent = 'Preguntas con evidencia menos directa';
     lowSection.appendChild(lowHeader);
     const lowIntro = document.createElement('p');
     lowIntro.className = 'info-text';
-    lowIntro.textContent = 'Estas preguntas se muestran aparte porque la diferencia entre candidatos es inferida, débil o no está claramente documentada. No las leas como una coincidencia firme.';
+    lowIntro.textContent = 'En algunas preguntas no hay una declaración pública exacta de ambos candidatos sobre ese punto específico. En esos casos, la alineación se aproxima usando posiciones públicas relacionadas, programa general o énfasis de campaña. Estas preguntas ayudan a cubrir temas importantes, pero no deben leerse como una coincidencia firme.';
     lowSection.appendChild(lowIntro);
     const list = document.createElement('ul');
     lowConfidenceQuestions.forEach((q) => {
@@ -828,7 +828,7 @@ function showResults() {
       item.appendChild(p2);
       const p3 = document.createElement('p');
       p3.style.margin = '4px 0';
-      p3.textContent = `Confianza de la correspondencia: ${formatConfidence(q.alignment_confidence)}. Base: ${q.alignment_basis || 'sin base documentada'}.`;
+      p3.textContent = `Solidez de la evidencia: ${formatConfidence(q.alignment_confidence)}. Base: ${q.alignment_basis || 'sin base documentada'}.`;
       item.appendChild(p3);
     }
     if (q.why_this_question_matters) {
@@ -868,7 +868,7 @@ function showResults() {
   // Conclusión
   const conclusion = document.createElement('p');
   conclusion.className = 'info-text';
-  conclusion.textContent = 'Tus respuestas parecen más cercanas a ciertas tendencias de cada candidato en distintas áreas. Esto no es una recomendación de voto: solo compara tus preferencias declaradas con posiciones públicas e inferencias razonables, con sus niveles de confianza.';
+  conclusion.textContent = 'Este resultado compara tus preferencias con posiciones públicas disponibles y, cuando no existe una declaración exacta, con alineaciones aproximadas basadas en temas relacionados. No es una recomendación de voto; es una herramienta para reflexionar y revisar fuentes.';
   resultsContainer.appendChild(conclusion);
 
   resultsContainer.classList.remove('hidden');
