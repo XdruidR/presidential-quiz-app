@@ -59,6 +59,8 @@ assert.deepStrictEqual(lowConfidence.map((q) => q.id), ['Q04']);
 assert(scriptSource.includes('Preguntas con evidencia menos directa'));
 assert(scriptSource.includes('Solidez de la evidencia'));
 assert(scriptSource.includes('alineaciones aproximadas basadas en temas relacionados'));
+assert(scriptSource.includes('li.textContent = `${q.id}: ${q.title}`;'));
+assert(!scriptSource.includes('— confianza ${formatConfidence(q.alignment_confidence)}'));
 assert(!scriptSource.includes('correspondencia inferida'));
 assert(!scriptSource.includes('son inferidas'));
 assert(!scriptSource.includes('es inferida, débil'));

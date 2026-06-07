@@ -9,7 +9,7 @@
  */
 
 // Variables globales para almacenar preguntas y respuestas
-const APP_VERSION = 'ux-neutral-security-1';
+const APP_VERSION = 'ux-low-evidence-footer-1';
 let questions = [];
 let currentIndex = 0;
 let useWeightedResults = false;
@@ -827,28 +827,6 @@ function showResults() {
   themeSection.appendChild(themeTable);
   resultsContainer.appendChild(themeSection);
 
-  // Preguntas con evidencia menos directa o sin correspondencia clara
-  const lowConfidenceQuestions = getLowConfidenceQuestions(questions);
-  if (lowConfidenceQuestions.length > 0) {
-    const lowSection = document.createElement('div');
-    lowSection.className = 'results-section';
-    const lowHeader = document.createElement('h2');
-    lowHeader.textContent = 'Preguntas con evidencia menos directa';
-    lowSection.appendChild(lowHeader);
-    const lowIntro = document.createElement('p');
-    lowIntro.className = 'info-text';
-    lowIntro.textContent = 'En algunas preguntas no hay una declaración pública exacta de ambos candidatos sobre ese punto específico. En esos casos, la alineación se aproxima usando posiciones públicas relacionadas, programa general o énfasis de campaña. Estas preguntas ayudan a cubrir temas importantes, pero no deben leerse como una coincidencia firme.';
-    lowSection.appendChild(lowIntro);
-    const list = document.createElement('ul');
-    lowConfidenceQuestions.forEach((q) => {
-      const li = document.createElement('li');
-      li.textContent = `${q.id}: ${q.title} — confianza ${formatConfidence(q.alignment_confidence)}`;
-      list.appendChild(li);
-    });
-    lowSection.appendChild(list);
-    resultsContainer.appendChild(lowSection);
-  }
-
   }
 
   // Explicación detallada
@@ -925,6 +903,30 @@ function showResults() {
     detailSection.appendChild(item);
   });
   resultsContainer.appendChild(detailSection);
+
+  if (revealCandidateAlignment) {
+    // Preguntas con evidencia menos directa o sin correspondencia clara
+    const lowConfidenceQuestions = getLowConfidenceQuestions(questions);
+    if (lowConfidenceQuestions.length > 0) {
+      const lowSection = document.createElement('div');
+      lowSection.className = 'results-section';
+      const lowHeader = document.createElement('h2');
+      lowHeader.textContent = 'Preguntas con evidencia menos directa';
+      lowSection.appendChild(lowHeader);
+      const lowIntro = document.createElement('p');
+      lowIntro.className = 'info-text';
+      lowIntro.textContent = 'En algunas preguntas no hay una declaración pública exacta de ambos candidatos sobre ese punto específico. En esos casos, la alineación se aproxima usando posiciones públicas relacionadas, programa general o énfasis de campaña. Estas preguntas ayudan a cubrir temas importantes, pero no deben leerse como una coincidencia firme.';
+      lowSection.appendChild(lowIntro);
+      const list = document.createElement('ul');
+      lowConfidenceQuestions.forEach((q) => {
+        const li = document.createElement('li');
+        li.textContent = `${q.id}: ${q.title}`;
+        list.appendChild(li);
+      });
+      lowSection.appendChild(list);
+      resultsContainer.appendChild(lowSection);
+    }
+  }
 
   // Conclusión
   const conclusion = document.createElement('p');
