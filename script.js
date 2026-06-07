@@ -9,7 +9,7 @@
  */
 
 // Variables globales para almacenar preguntas y respuestas
-const APP_VERSION = 'compact-ui-1';
+const APP_VERSION = 'ux-landing-vertical-1';
 let questions = [];
 let currentIndex = 0;
 let useWeightedResults = false;
@@ -17,6 +17,8 @@ let revealCandidateAlignment = false;
 const responses = [];
 
 // Referencias a elementos del DOM
+const landingContainer = document.getElementById('landing-container');
+const startQuizBtn = document.getElementById('start-quiz-btn');
 const quizContainer = document.getElementById('quiz-container');
 const navigation = document.getElementById('navigation');
 const prevBtn = document.getElementById('prev-btn');
@@ -26,11 +28,32 @@ const resultsContainer = document.getElementById('results-container');
 // Inicialización
 window.addEventListener('DOMContentLoaded', async () => {
   await loadQuestions();
-  if (questions.length > 0) {
-    navigation.classList.remove('hidden');
-    showQuestion(0);
-  }
+  showLanding();
 });
+
+function showLanding() {
+  if (landingContainer) {
+    landingContainer.classList.remove('hidden');
+  }
+  quizContainer.classList.add('hidden');
+  navigation.classList.add('hidden');
+  resultsContainer.classList.add('hidden');
+}
+
+function startQuiz() {
+  if (questions.length === 0) {
+    return;
+  }
+  if (landingContainer) {
+    landingContainer.classList.add('hidden');
+  }
+  navigation.classList.remove('hidden');
+  showQuestion(0);
+}
+
+if (startQuizBtn) {
+  startQuizBtn.addEventListener('click', startQuiz);
+}
 
 // Cargar preguntas del archivo JSON y randomizar la orientación
 async function loadQuestions() {
@@ -57,6 +80,9 @@ async function loadQuestions() {
 
 // Mostrar una pregunta por índice
 function showQuestion(index) {
+  if (landingContainer) {
+    landingContainer.classList.add('hidden');
+  }
   quizContainer.classList.remove('hidden');
   navigation.classList.remove('hidden');
   resultsContainer.classList.add('hidden');
@@ -92,16 +118,25 @@ function showQuestion(index) {
   sliderInput.max = '10';
   sliderInput.step = '1';
   sliderInput.value = responses[index] ? responses[index].value * 10 : 5; // valor medio por defecto
-  sliderInput.className = 'slider';
+  sliderInput.className = 'slider vertical-slider';
+  sliderInput.setAttribute('aria-label', 'Selector vertical de preferencia: arriba Opción A, abajo Opción B');
+
+  const verticalPreference = document.createElement('div');
+  verticalPreference.className = 'vertical-preference';
+  verticalPreference.innerHTML = '<span class="preference-arrow arrow-up" aria-hidden="true">↑</span><span class="neutral-chip">Neutral</span><span class="preference-arrow arrow-down" aria-hidden="true">↓</span>';
+  verticalPreference.appendChild(sliderInput);
 
   const scaleLabels = document.createElement('div');
-  scaleLabels.className = 'scale-labels';
+  scaleLabels.className = 'scale-labels vertical-scale-labels';
   scaleLabels.innerHTML = '<span>A / 0</span><span>Neutral / 5</span><span>B / 10</span>';
 
   sliderContainer.appendChild(optionA);
+  sliderContainer.appendChild(verticalPreference);
   sliderContainer.appendChild(optionB);
-  sliderContainer.appendChild(sliderInput);
   sliderContainer.appendChild(scaleLabels);
+
+  updateSliderVisualState(sliderInput, optionA, optionB, verticalPreference);
+  sliderInput.addEventListener('input', () => updateSliderVisualState(sliderInput, optionA, optionB, verticalPreference));
 
   // Radio buttons para nivel de afectación
   const affectContainer = document.createElement('div');
@@ -149,6 +184,19 @@ function showQuestion(index) {
   // Ajustar botones
   prevBtn.disabled = index === 0;
   nextBtn.textContent = index === questions.length - 1 ? 'Finalizar' : 'Siguiente';
+}
+
+function updateSliderVisualState(sliderInput, optionA, optionB, verticalPreference) {
+  const rawValue = Number(sliderInput.value || 5);
+  const normalized = rawValue / 10;
+  const strength = Math.abs(normalized - 0.5) * 2;
+  const choice = rawValue < 5 ? 'a' : rawValue > 5 ? 'b' : 'neutral';
+  verticalPreference.dataset.choice = choice;
+  verticalPreference.style.setProperty('--preference-strength', strength.toFixed(2));
+  optionA.dataset.active = choice === 'a' ? 'true' : 'false';
+  optionB.dataset.active = choice === 'b' ? 'true' : 'false';
+  optionA.style.setProperty('--option-emphasis', choice === 'a' ? strength.toFixed(2) : '0');
+  optionB.style.setProperty('--option-emphasis', choice === 'b' ? strength.toFixed(2) : '0');
 }
 
 function escapeHtml(text) {
@@ -441,8 +489,83 @@ function appendPreferenceMap(target, revealed) {
   target.appendChild(section);
 }
 
+function appendPdfExportControls(target, results) {
+  const section = document.createElement('section');
+  section.className = 'results-section pdf-export-section';
+
+  const heading = document.createElement('h2');
+  heading.textContent = 'Exportar resumen';
+  section.appendChild(heading);
+
+  const note = document.createElement('p');
+  note.className = 'info-text';
+  note.textContent = revealCandidateAlignment
+    ? 'Genera un PDF desde la vista de impresión del navegador con el resumen general, dimensiones y advertencias de confianza.'
+    : 'Revela la alineación de candidatos para exportar un resumen con resultados interpretados.';
+  section.appendChild(note);
+
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.className = 'pdf-export-btn';
+  button.textContent = 'Exportar resumen en PDF';
+  button.disabled = !revealCandidateAlignment;
+  button.addEventListener('click', () => window.print());
+  section.appendChild(button);
+
+  if (revealCandidateAlignment) {
+    const printable = document.createElement('div');
+    printable.className = 'printable-summary';
+    printable.appendChild(buildPrintableSummary(results));
+    section.appendChild(printable);
+  }
+
+  target.appendChild(section);
+}
+
+function buildPrintableSummary(results) {
+  const wrapper = document.createElement('div');
+  const title = document.createElement('h2');
+  title.textContent = 'Resumen del cuestionario de preferencias';
+  wrapper.appendChild(title);
+
+  const warning = document.createElement('p');
+  warning.textContent = 'No es una recomendación de voto. Algunas correspondencias son inferidas y deben leerse con cautela.';
+  wrapper.appendChild(warning);
+
+  const candidates = Object.entries(results.candidatePercentages || {})
+    .sort(([, a], [, b]) => b - a)
+    .map(([candidate, percentage]) => `${candidate}: ${percentage} %`);
+  const candidateList = document.createElement('ul');
+  candidates.forEach((item) => {
+    const li = document.createElement('li');
+    li.textContent = item;
+    candidateList.appendChild(li);
+  });
+  wrapper.appendChild(candidateList);
+
+  const dimensionTitle = document.createElement('h3');
+  dimensionTitle.textContent = 'Resumen por dimensión';
+  wrapper.appendChild(dimensionTitle);
+  const dimensionList = document.createElement('ul');
+  Object.entries(results.dimensionPercentages || {}).forEach(([dimension, scores]) => {
+    const li = document.createElement('li');
+    li.textContent = `${dimension}: Cepeda ${scores.Cepeda ?? '-'} %, De La Espriella ${scores['De La Espriella'] ?? '-'} %`;
+    dimensionList.appendChild(li);
+  });
+  wrapper.appendChild(dimensionList);
+
+  const lowConfidenceCount = getLowConfidenceQuestions(questions).length;
+  const lowNote = document.createElement('p');
+  lowNote.textContent = `${lowConfidenceCount} preguntas tienen baja confianza o correspondencia inferida.`;
+  wrapper.appendChild(lowNote);
+  return wrapper;
+}
+
 // Calcular y mostrar resultados
 function showResults() {
+  if (landingContainer) {
+    landingContainer.classList.add('hidden');
+  }
   quizContainer.classList.add('hidden');
   navigation.classList.add('hidden');
   const results = calculateAffinityResults(questions, responses, useWeightedResults);
@@ -497,6 +620,7 @@ function showResults() {
   revealControl.appendChild(revealText);
   resultsContainer.appendChild(revealControl);
 
+  appendPdfExportControls(resultsContainer, results);
   appendPreferenceMap(resultsContainer, revealCandidateAlignment);
 
   if (!revealCandidateAlignment) {

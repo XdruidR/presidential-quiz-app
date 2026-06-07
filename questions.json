@@ -4,15 +4,15 @@
     "theme": "Política fiscal y gasto social",
     "title": "¿Priorizar gasto social o disciplina fiscal?",
     "plain_language_intro": "Colombia tiene una deuda alta y necesita decidir cuánto gastar. Algunas personas quieren ampliar programas sociales como pensiones, educación y salud, aunque eso implique subir impuestos y endeudarse más. Otros creen que es mejor recortar el gasto, bajar impuestos y limitar la deuda del país.",
-    "technical_explanation": "El gobierno saliente aumentó el déficit fiscal a 7,1 % del PIB y suspendió la regla fiscal, lo que llevó a S&P y Moody’s a recortar la calificación de la deuda colombiana porque los déficits grandes y el bajo crecimiento aumentan la vulnerabilidad financiera del país【32690702880659†L204-L224】. Iván Cepeda propone ampliar el gasto social financiado con una reforma tributaria que amplíe la base y cobre impuestos a los más ricos【185161692428370†L229-L234】. Abelardo de la Espriella plantea reducir el tamaño del Estado, recortar impuestos y reactivar la economía a través del sector minero‑energético【824602632538714†L224-L266】.",
-    "simple_explanation": "Más gasto social ayuda a los pobres pero puede aumentar la deuda y el costo de los créditos del país. Reducir el gasto y los impuestos puede mejorar la confianza de inversionistas, pero deja menos recursos para educación, salud y subsidios.",
+    "technical_explanation": "El gobierno saliente aumentó el déficit fiscal a 7,1 % del PIB y suspendió la regla fiscal, lo que llevó a S&P y Moody’s a recortar la calificación de la deuda colombiana porque los déficits grandes y el bajo crecimiento aumentan la vulnerabilidad financiera del país【32690702880659†L204-L224】. Iván Cepeda propone ampliar el gasto social financiado con una reforma tributaria que amplíe la base y cobre más a personas de mayores ingresos【185161692428370†L229-L234】. Abelardo de la Espriella plantea reducir el tamaño del Estado, recortar impuestos y reactivar la economía a través del sector minero‑energético【824602632538714†L224-L266】.",
+    "simple_explanation": "Ampliar el gasto social puede apoyar a hogares de bajos ingresos, pero también aumentar la deuda y el costo de los créditos del país. Reducir el gasto y los impuestos puede mejorar la confianza de inversionistas, pero deja menos recursos para educación, salud y subsidios.",
     "affected_groups": [
       "contribuyentes y personas de altos ingresos",
-      "beneficiarios de programas sociales (adultos mayores, familias pobres, estudiantes)",
+      "beneficiarios de programas sociales (adultos mayores, hogares de bajos ingresos, estudiantes)",
       "inversionistas y calificadoras de riesgo",
       "futuras generaciones que asumirán la deuda"
     ],
-    "left_label": "Ampliar programas sociales aunque aumente el déficit; financiar con impuestos a los ricos y eliminar exenciones",
+    "left_label": "Ampliar programas sociales aunque aumente el déficit; financiar con impuestos progresivos a personas y hogares de mayores ingresos y revisar exenciones",
     "right_label": "Recortar el gasto público, bajar impuestos y reducir el tamaño del Estado para controlar la deuda",
     "left_cost_or_risk": "Mayor déficit puede degradar la calificación crediticia, subir intereses y reducir la confianza de inversionistas【32690702880659†L204-L224】.",
     "right_cost_or_risk": "Menos gasto puede frenar la reducción de pobreza e incrementar la protesta social; menos impuestos reducen ingresos estatales.",
@@ -90,7 +90,7 @@
     "theme": "Inversión extranjera y regulación",
     "title": "¿Facilitar la inversión con menos impuestos o exigir mayores condiciones?",
     "plain_language_intro": "Colombia necesita inversión para crecer. Una opción es atraer capital extranjero bajando impuestos y regulaciones para que lleguen más empresas. La otra es imponer requisitos sociales y ambientales fuertes y asegurar que las ganancias beneficien a las comunidades locales, aunque algunas empresas decidan no invertir.",
-    "technical_explanation": "De la Espriella propone recortar impuestos y reducir el tamaño del Estado en un 40 % para aumentar la inversión privada y reactivar sectores como minería y petróleo【824602632538714†L224-L266】. Cepeda propone ‘capitalismo social’: reformar las leyes para que las comunidades accedan a contratos públicos y ampliar el apoyo a adultos mayores, familias pobres y jóvenes【861670868475338†L256-L260】; él también plantea ampliar la base tributaria y gravar a los más ricos【185161692428370†L229-L233】.",
+    "technical_explanation": "De la Espriella propone recortar impuestos y reducir el tamaño del Estado en un 40 % para aumentar la inversión privada y reactivar sectores como minería y petróleo【824602632538714†L224-L266】. Cepeda propone ‘capitalismo social’: reformar las leyes para que las comunidades accedan a contratos públicos y ampliar el apoyo a adultos mayores, hogares de bajos ingresos y jóvenes【861670868475338†L256-L260】; él también plantea ampliar la base tributaria y cobrar más a personas de mayores ingresos【185161692428370†L229-L233】.",
     "simple_explanation": "Menos impuestos y reglas pueden atraer empresas y generar empleo rápido, pero podrían sacrificar estándares laborales y ambientales y reducir ingresos del Estado. Imponer condiciones asegura mejores salarios, protección del medio ambiente y beneficios para las comunidades, pero podría ahuyentar a inversionistas.",
     "affected_groups": [
       "trabajadores y sindicatos",
@@ -136,7 +136,7 @@
     "theme": "Reforma institucional y constitución",
     "title": "¿Convocar una asamblea constituyente o mantener la constitución actual?",
     "plain_language_intro": "Algunos sectores quieren reescribir la Constitución de 1991 para abordar temas como la paz, la reforma agraria y los derechos sociales. Otros creen que cambiar la Carta Magna generaría incertidumbre y pondría en riesgo la separación de poderes.",
-    "technical_explanation": "Iván Cepeda ha defendido la necesidad de reformar la constitución y ha impulsado la idea de una asamblea constituyente para profundizar cambios sociales【861670868475338†L256-L270】, aunque en junio de 2026 moderó su postura diciendo que solo la convocaría con amplio consenso【972499073273621†L210-L223】. Sus opositores, incluidos Abelardo de la Espriella y otros líderes de derecha, rechazan una asamblea constituyente por considerarla innecesaria y peligrosa para los balances democráticos【972499073273621†L210-L223】.",
+    "technical_explanation": "Iván Cepeda ha defendido la necesidad de reformar la constitución y ha impulsado la idea de una asamblea constituyente para profundizar cambios sociales【861670868475338†L256-L270】, aunque en junio de 2026 moderó su postura diciendo que solo la convocaría con amplio consenso【972499073273621†L210-L223】. Sus opositores, incluidos Abelardo de la Espriella y otros líderes de derecha, rechazan una asamblea constituyente por considerarla innecesaria y riesgosa para los balances democráticos【972499073273621†L210-L223】.",
     "simple_explanation": "Reescribir la constitución podría permitir reformas profundas en paz, justicia y reparto de tierras, pero puede crear inestabilidad y concentrar poder. Mantener la constitución actual garantiza reglas claras, pero puede ralentizar los cambios que muchos consideran urgentes.",
     "affected_groups": [
       "todas las ramas del poder público",
@@ -208,9 +208,9 @@
   {
     "id": "Q06",
     "theme": "Seguridad urbana y crimen",
-    "title": "¿Mano dura y cárceles o prevención social para reducir el crimen urbano?",
+    "title": "¿Respuesta policial y penitenciaria más fuerte o prevención social para reducir el crimen urbano?",
     "plain_language_intro": "En las ciudades se registran extorsiones, robos y microtráfico. Un enfoque propone aumentar la presencia policial, construir más cárceles y endurecer penas. Otro propone combinar medidas de seguridad con programas sociales para jóvenes y oportunidades de empleo.",
-    "technical_explanation": "Abelardo de la Espriella centra su campaña en la seguridad: quiere construir diez megaprisiones, aumentar el presupuesto de las fuerzas armadas y autorizar a la policía a disparar a manifestantes violentos【708851537569663†L316-L327】; también plantea una ofensiva militar contra bandas y ampliar el pie de fuerza【824602632538714†L224-L266】. Iván Cepeda defiende una política de paz total y reducción de violencia mediante inversión social, educación y oportunidades para jóvenes, como parte de su enfoque de justicia social【708851537569663†L242-L251】.",
+    "technical_explanation": "Abelardo de la Espriella centra su campaña en la seguridad: quiere construir diez megaprisiones, aumentar el presupuesto de las fuerzas armadas y autorizar a la policía a disparar a manifestantes violentos【708851537569663†L316-L327】; también plantea una ofensiva militar contra bandas y ampliar el pie de fuerza【824602632538714†L224-L266】. Iván Cepeda defiende una política de paz total y reducción de violencia mediante inversión social, educación y oportunidades para jóvenes, como parte de su enfoque de derechos sociales【708851537569663†L242-L251】.",
     "simple_explanation": "Más policía y cárceles pueden reducir delitos rápidos pero pueden generar abusos y sobrepoblación carcelaria. Programas sociales pueden atacar las causas del crimen, pero son más lentos y requieren inversión.",
     "affected_groups": [
       "habitantes de ciudades y comerciantes",
@@ -221,7 +221,7 @@
     "left_label": "Priorizar presencia policial, megacárceles y penas duras para combatir el crimen urbano de inmediato",
     "right_label": "Combinar seguridad con inversión social, educación y empleo juvenil para prevenir el delito a mediano plazo",
     "left_cost_or_risk": "Puede aumentar el gasto en seguridad, saturar cárceles y generar abusos de derechos humanos【708851537569663†L316-L327】.",
-    "right_cost_or_risk": "Los resultados son menos inmediatos y requieren recursos; pueden ser percibidos como blandos frente al crimen.",
+    "right_cost_or_risk": "Los resultados son menos inmediatos y requieren recursos; pueden ser percibidos como insuficientes ante delitos urgentes o de alto impacto.",
     "candidate_alignment_left": "De La Espriella",
     "candidate_alignment_right": "Cepeda",
     "alignment_confidence": "high",
@@ -249,16 +249,16 @@
     "id": "Q07",
     "theme": "Seguridad rural y grupos armados",
     "title": "¿Ofensiva militar contra grupos armados o negociación y desarrollo rural?",
-    "plain_language_intro": "En muchas zonas rurales operan grupos armados ilegales. Algunos quieren que el Estado lance una ofensiva militar y no negocie con criminales. Otros defienden negociar, impulsar proyectos de desarrollo y dar alternativas a las comunidades para reducir la violencia.",
-    "technical_explanation": "De la Espriella promete no adelantar procesos de paz con grupos ilegales, reanudar los bombardeos y fumigaciones de cultivos de coca, y aumentar la presencia militar【824602632538714†L224-L266】. Cepeda apoya la ‘paz total’: seguir las negociaciones con guerrillas y bandas, y profundizar reformas sociales y agrarias para atacar las causas estructurales de la violencia【708851537569663†L242-L245】【609787524051082†L256-L263】.",
-    "simple_explanation": "Una ofensiva militar puede debilitar a los grupos armados rápidamente pero puede aumentar desplazamientos y violencia contra las comunidades. Negociar y desarrollar el campo puede reducir la violencia a largo plazo, pero puede percibirse como concesión e impunidad.",
+    "plain_language_intro": "En muchas zonas rurales operan grupos armados ilegales. Algunos quieren que el Estado lance una ofensiva militar y no abra negociaciones con estos grupos. Otros defienden negociar, impulsar proyectos de desarrollo y dar alternativas a las comunidades para reducir la violencia.",
+    "technical_explanation": "De la Espriella promete no adelantar procesos de paz con grupos armados ilegales, reanudar los bombardeos y fumigaciones de cultivos de coca, y aumentar la presencia militar【824602632538714†L224-L266】. Cepeda apoya la ‘paz total’: seguir las negociaciones con guerrillas y bandas, y profundizar reformas sociales y agrarias para atacar las causas estructurales de la violencia【708851537569663†L242-L245】【609787524051082†L256-L263】.",
+    "simple_explanation": "Una ofensiva militar puede debilitar a los grupos armados rápidamente pero puede aumentar desplazamientos y violencia contra las comunidades. Negociar y desarrollar el campo puede reducir la violencia a largo plazo, pero puede percibirse como concesiones excesivas o justicia insuficiente.",
     "affected_groups": [
       "campesinos y comunidades en zonas de conflicto",
       "personas víctimas de violencia y extorsión",
       "miembros de la fuerza pública",
       "familias de guerrilleros y excombatientes"
     ],
-    "left_label": "Lanzar una ofensiva militar fuerte, suspender negociaciones y erradicar cultivos ilícitos con mano dura",
+    "left_label": "Lanzar una ofensiva militar fuerte, suspender negociaciones y erradicar cultivos ilícitos mediante operaciones de seguridad",
     "right_label": "Mantener las negociaciones de paz y acompañarlas con inversión social, tierras y desarrollo rural",
     "left_cost_or_risk": "Puede generar más violencia, desplazamientos y violaciones de derechos humanos; puede revivir ciclos de venganza【824602632538714†L224-L266】.",
     "right_cost_or_risk": "Los acuerdos pueden ser impopulares, implicar concesiones judiciales y tomar mucho tiempo en mostrar resultados【708851537569663†L242-L245】.",
@@ -289,13 +289,13 @@
     ],
     "dimension": "seguridad y paz",
     "left_connotation": "Prioriza control territorial rápido y disuasión armada; acepta riesgo de daño civil y escalamiento del conflicto.",
-    "right_connotation": "Prioriza paz duradera, inclusión territorial y reformas rurales; acepta progreso lento y percepción de impunidad."
+    "right_connotation": "Prioriza paz duradera, inclusión territorial y reformas rurales; acepta progreso lento y percepción de concesiones excesivas o justicia insuficiente."
   },
   {
     "id": "Q08",
     "theme": "Cultivos ilícitos y sustitución",
     "title": "¿Erradicar con fuerza o apoyar sustitución gradual de cultivos ilícitos?",
-    "plain_language_intro": "En varias regiones los campesinos cultivan coca porque no tienen alternativas rentables. Una opción es erradicar rápidamente con fumigación y mano dura. Otra es ofrecer subsidios, tierra y mercados para que cambien a cultivos legales.",
+    "plain_language_intro": "En varias regiones los campesinos cultivan coca porque no tienen alternativas rentables. Una opción es erradicar rápidamente con fumigación y operativos de seguridad. Otra es ofrecer subsidios, tierra y mercados para que cambien a cultivos legales.",
     "technical_explanation": "De la Espriella ha dicho que reanudará fumigaciones aéreas de coca y operativos de bombardeo para destruir laboratorios; a la vez, ayudaría a los campesinos a pasar a cultivos de cacao y palma africana【824602632538714†L224-L266】. Cepeda apoya programas de sustitución voluntaria y desarrollo rural como parte de la paz total, enfocados en inversión social y alternativas productivas【708851537569663†L242-L245】.",
     "simple_explanation": "La erradicación rápida reduce la producción de droga pero puede dejar a los agricultores sin ingresos y generar conflicto. La sustitución gradual permite a los campesinos adaptarse pero puede tardar y requiere recursos y seguridad para funcionar.",
     "affected_groups": [
@@ -312,7 +312,7 @@
     "candidate_alignment_right": "Cepeda",
     "alignment_confidence": "high",
     "alignment_basis": "official proposal",
-    "why_this_question_matters": "La estrategia frente a los cultivos ilícitos afecta la economía rural, la seguridad y la salud pública. Determina si se prioriza la mano dura o las alternativas para los campesinos.",
+    "why_this_question_matters": "La estrategia frente a los cultivos ilícitos afecta la economía rural, la seguridad y la salud pública. Determina si se prioriza la erradicación forzada o las alternativas productivas para los campesinos.",
     "sources": [
       {
         "title": "Colombian presidential hopeful vows to boost security and economy",
@@ -336,7 +336,7 @@
     "theme": "Mercado laboral e informalidad",
     "title": "¿Flexibilizar las normas laborales para fomentar empleo o proteger a los trabajadores y formalizar la informalidad?",
     "plain_language_intro": "Muchos colombianos trabajan sin contrato ni protección. Algunas personas quieren simplificar las normas, bajar contribuciones y permitir mayor flexibilidad para contratar. Otros creen que se debe exigir que las empresas formalicen a sus trabajadores y se respeten los derechos laborales, aunque eso aumente los costos.",
-    "technical_explanation": "De la Espriella ha propuesto reducir el tamaño del Estado, recortar impuestos y liberar la economía para aumentar la inversión y el empleo【824602632538714†L224-L266】. Esta visión se asocia con flexibilizar la regulación laboral y reducir cargas para empleadores. Cepeda, en cambio, busca ampliar el gasto social y la protección de grupos vulnerables【185161692428370†L229-L234】, lo que implica fortalecer programas de formalización y derechos laborales aunque aumente la carga para empleadores. No hay propuestas explícitas, por lo que la alineación se infiere del enfoque ideológico general.",
+    "technical_explanation": "De la Espriella ha propuesto reducir el tamaño del Estado, recortar impuestos y desregular la economía para aumentar la inversión y el empleo【824602632538714†L224-L266】. Esta visión se asocia con flexibilizar la regulación laboral y reducir cargas para empleadores. Cepeda, en cambio, busca ampliar el gasto social y la protección de grupos vulnerables【185161692428370†L229-L234】, lo que implica fortalecer programas de formalización y derechos laborales aunque aumente la carga para empleadores. No hay propuestas explícitas, por lo que la alineación se infiere del enfoque ideológico general.",
     "simple_explanation": "Reducir trámites y costos para contratar puede incentivar a las empresas a formalizar más trabajadores, pero puede debilitar la protección laboral. Exigir formalización y derechos laborales puede mejorar condiciones de los trabajadores, pero puede desalentar la creación de empleo formal.",
     "affected_groups": [
       "trabajadores informales y sus familias",
@@ -346,7 +346,7 @@
     ],
     "left_label": "Simplificar normas y bajar cargas para empleadores, permitiendo mayor flexibilidad laboral para generar empleo formal",
     "right_label": "Fortalecer derechos laborales, exigir contratos formales y ampliar programas de protección social",
-    "left_cost_or_risk": "Podría precarizar el empleo y reducir ingresos de seguridad social.",
+    "left_cost_or_risk": "Podría reducir estabilidad laboral, beneficios o aportes a seguridad social.",
     "right_cost_or_risk": "Aumenta los costos para las empresas y podría hacer que contraten menos o informalicen para evitar regulaciones.",
     "candidate_alignment_left": "De La Espriella",
     "candidate_alignment_right": "Cepeda",
@@ -376,8 +376,8 @@
     "theme": "Pequeñas empresas y carga regulatoria",
     "title": "¿Reducir impuestos y trámites para las pequeñas empresas o exigirles más responsabilidades fiscales y laborales?",
     "plain_language_intro": "Las micro y pequeñas empresas generan gran parte del empleo. Algunos creen que deberían tener menos impuestos, trámites sencillos y apoyo financiero para crecer. Otros piensan que deben cumplir con sus obligaciones tributarias y laborales como cualquier empresa para financiar el Estado y proteger a sus empleados.",
-    "technical_explanation": "De la Espriella propone recortar impuestos y reducir la carga estatal para estimular la inversión y el crecimiento【824602632538714†L224-L266】. Cepeda defiende ampliar la base tributaria gravando a los más ricos y manteniendo programas sociales; su visión implica exigir más contribuciones y formalización a empresas para financiar beneficios【185161692428370†L229-L234】. La alineación específica para pequeñas empresas se infiere del enfoque general de cada candidato.",
-    "simple_explanation": "Bajar impuestos y trámites puede ayudar a que las pequeñas empresas crezcan y contraten, pero reduce ingresos del Estado y puede limitar la protección social. Exigir más responsabilidades fiscales y laborales asegura recursos para programas y protege a los trabajadores, pero puede ahogar a las pequeñas empresas.",
+    "technical_explanation": "De la Espriella propone recortar impuestos y reducir la carga estatal para estimular la inversión y el crecimiento【824602632538714†L224-L266】. Cepeda defiende ampliar la base tributaria cobrando más a personas de mayores ingresos y manteniendo programas sociales; su visión implica exigir más contribuciones y formalización a empresas para financiar beneficios【185161692428370†L229-L234】. La alineación específica para pequeñas empresas se infiere del enfoque general de cada candidato.",
+    "simple_explanation": "Bajar impuestos y trámites puede ayudar a que las pequeñas empresas crezcan y contraten, pero reduce ingresos del Estado y puede limitar la protección social. Exigir más responsabilidades fiscales y laborales asegura recursos para programas y protege a los trabajadores, pero puede elevar costos de cumplimiento y dificultar la operación de negocios pequeños.",
     "affected_groups": [
       "emprendedores y empresarios de pymes",
       "trabajadores de pequeñas empresas",
@@ -416,7 +416,7 @@
     "theme": "Propiedad urbana y vivienda",
     "title": "¿Proteger la propiedad privada y el libre mercado de vivienda o implementar controles de arriendo e impuestos para financiar vivienda social?",
     "plain_language_intro": "En las ciudades, la vivienda es cada vez más cara. Algunos creen que el Estado no debe intervenir: hay que proteger el derecho de los propietarios y permitir que el mercado determine los precios. Otros proponen regular los arriendos y gravar más la propiedad para financiar vivienda social y combatir la especulación.",
-    "technical_explanation": "Abelardo de la Espriella enfatiza la defensa de la propiedad privada y propone reducir la intervención estatal y los impuestos para que el mercado inmobiliario florezca; esto se infiere de su propuesta de reducir el Estado y los impuestos【824602632538714†L224-L266】. Iván Cepeda impulsa programas de justicia social y redistribución, lo que sugiere que apoya políticas de vivienda asequible y regulación para combatir la desigualdad urbana【708851537569663†L233-L251】. No existen declaraciones explícitas sobre control de arriendos, por lo que la alineación se basa en la ideología general.",
+    "technical_explanation": "Abelardo de la Espriella enfatiza la defensa de la propiedad privada y propone reducir la intervención estatal y los impuestos para incentivar el mercado inmobiliario; esto se infiere de su propuesta de reducir el Estado y los impuestos【824602632538714†L224-L266】. Iván Cepeda impulsa programas de derechos sociales y redistribución, lo que sugiere que apoya políticas de vivienda asequible y regulación para combatir la desigualdad urbana【708851537569663†L233-L251】. No existen declaraciones explícitas sobre control de arriendos, por lo que la alineación se basa en la ideología general.",
     "simple_explanation": "Proteger la propiedad privada sin controles promueve la inversión en vivienda pero puede hacer que los arriendos sigan subiendo. Regular los arriendos y gravar las propiedades busca hacer las viviendas más accesibles, pero puede desincentivar la inversión y la construcción.",
     "affected_groups": [
       "propietarios de viviendas y arrendadores",
@@ -424,7 +424,7 @@
       "constructoras y agentes inmobiliarios",
       "gobiernos locales"
     ],
-    "left_label": "Proteger la propiedad privada, reducir impuestos y permitir que el mercado de vivienda funcione libremente",
+    "left_label": "Proteger la propiedad privada, reducir impuestos y mantener menor intervención estatal en precios, arriendos e inversión inmobiliaria",
     "right_label": "Regular arriendos, aumentar impuestos a la propiedad y financiar vivienda social para combatir la desigualdad urbana",
     "left_cost_or_risk": "Puede mantener altas las rentas y aumentar la segregación urbana; limita recursos para vivienda social.",
     "right_cost_or_risk": "Puede reducir la inversión inmobiliaria y provocar escasez de vivienda si los controles son estrictos.",
@@ -457,7 +457,7 @@
     "title": "¿Priorizar la seguridad jurídica y la propiedad privada o impulsar una reforma agraria que redistribuya tierras?",
     "plain_language_intro": "El acceso a la tierra es desigual. Algunos creen que hay que proteger la propiedad privada y evitar cambios grandes. Otros quieren una reforma agraria que compre o expropie tierras para dárselas a campesinos y víctimas.",
     "technical_explanation": "Cepeda promete entregar un millón de hectáreas a víctimas del conflicto y ampliar la reforma agraria【609787524051082†L256-L263】. De la Espriella no ha presentado un plan de redistribución de tierras y se alinea con la defensa de la propiedad privada y la seguridad jurídica, conforme a su agenda de reducción del Estado y atracción de inversión【824602632538714†L224-L266】. La alineación se infiere del contraste de sus propuestas.",
-    "simple_explanation": "Proteger la propiedad existente brinda seguridad a los dueños y atrae inversión, pero puede perpetuar desigualdades históricas. Redistribuir la tierra puede mejorar la justicia social, pero puede asustar a inversionistas y generar conflictos.",
+    "simple_explanation": "Proteger la propiedad existente brinda seguridad a los dueños y atrae inversión, pero puede perpetuar desigualdades históricas. Redistribuir la tierra puede reducir desigualdades históricas en acceso a tierra, pero puede generar incertidumbre para propietarios e inversionistas rurales.",
     "affected_groups": [
       "grandes y medianos propietarios rurales",
       "campesinos sin tierra o con poca tierra",
@@ -534,25 +534,25 @@
   {
     "id": "Q14",
     "theme": "Víctimas, justicia y paz",
-    "title": "¿Priorizar reparación y acuerdos de paz o castigo severo y no negociar con grupos ilegales?",
-    "plain_language_intro": "Colombia acumula millones de víctimas del conflicto. Algunos abogan por la verdad, la reparación y acuerdos de paz con quienes han cometido delitos para terminar la violencia. Otros creen que se debe castigar con fuerza a todos los criminales y no negociar con ellos.",
-    "technical_explanation": "Cepeda respalda la ‘paz total’ y la justicia restaurativa, que incluyen acuerdos con guerrillas y bandas criminales para desmovilizarse y reparar a las víctimas, además de reformas sociales【708851537569663†L242-L245】. De la Espriella rechaza cualquier proceso de paz con ilegales, promete no negociar y promete castigo severo y más cárceles【824602632538714†L224-L266】【708851537569663†L316-L327】.",
-    "simple_explanation": "La reparación y los acuerdos de paz pueden reducir la violencia y permitir reintegración, pero pueden percibirse como impunidad. El castigo severo puede satisfacer la demanda de justicia, pero puede perpetuar la guerra y obstaculizar la reconciliación.",
+    "title": "¿Priorizar reparación y acuerdos de paz o sanciones más estrictas y no negociar con grupos armados ilegales?",
+    "plain_language_intro": "Colombia acumula millones de víctimas del conflicto. Algunos abogan por la verdad, la reparación y acuerdos de paz con quienes han cometido delitos para terminar la violencia. Otros creen que se deben aplicar sanciones penales más estrictas y no negociar con grupos armados ilegales.",
+    "technical_explanation": "Cepeda respalda la ‘paz total’ y la justicia restaurativa, que incluyen acuerdos con guerrillas y bandas para desmovilizarse y reparar a las víctimas, además de reformas sociales【708851537569663†L242-L245】. De la Espriella rechaza cualquier proceso de paz con grupos armados ilegales, promete no negociar y promete sanciones severas y más cárceles【824602632538714†L224-L266】【708851537569663†L316-L327】.",
+    "simple_explanation": "La reparación y los acuerdos de paz pueden reducir la violencia y permitir reintegración, pero pueden percibirse como justicia insuficiente o concesiones excesivas. Las sanciones más estrictas pueden satisfacer la demanda de justicia, pero pueden perpetuar la guerra y obstaculizar la reconciliación.",
     "affected_groups": [
       "víctimas del conflicto y sus familias",
-      "integrantes de grupos ilegales y excombatientes",
+      "integrantes de grupos armados ilegales y excombatientes",
       "operadores judiciales y defensores de derechos humanos",
       "comunidades en zonas de conflicto"
     ],
-    "left_label": "Rechazar negociaciones, castigar severamente y aumentar las penas y las cárceles para grupos ilegales",
+    "left_label": "Rechazar negociaciones, aplicar sanciones penales más estrictas y aumentar las penas y las cárceles para grupos armados ilegales",
     "right_label": "Promover verdad, reparación y acuerdos de paz con garantías, buscando justicia restaurativa y reintegración",
     "left_cost_or_risk": "Puede prolongar la violencia, sobrecargar el sistema penitenciario y generar nuevas violaciones de derechos humanos【708851537569663†L316-L327】.",
-    "right_cost_or_risk": "Puede generar percepción de impunidad y descontento en sectores que piden justicia; negociaciones pueden fallar y generar frustración【708851537569663†L242-L245】.",
+    "right_cost_or_risk": "Puede generar percepción de justicia insuficiente o concesiones excesivas y descontento en sectores que piden sanciones más estrictas; negociaciones pueden fallar y generar frustración【708851537569663†L242-L245】.",
     "candidate_alignment_left": "De La Espriella",
     "candidate_alignment_right": "Cepeda",
     "alignment_confidence": "high",
     "alignment_basis": "official proposal",
-    "why_this_question_matters": "La política hacia las víctimas y los grupos ilegales definirá si Colombia avanza hacia la reconciliación o mantiene un enfoque punitivo. Afecta la paz y la justicia social.",
+    "why_this_question_matters": "La política hacia las víctimas y los grupos armados ilegales definirá si Colombia avanza hacia la reconciliación o mantiene un enfoque punitivo. Afecta la paz y la legitimidad de la justicia.",
     "sources": [
       {
         "title": "Candidate profiles: Defender of the Homeland and peace advocate",
@@ -569,14 +569,14 @@
     ],
     "dimension": "seguridad y paz",
     "left_connotation": "Prioriza castigo, disuasión y justicia para víctimas que rechazan concesiones; acepta riesgo de prolongar la guerra.",
-    "right_connotation": "Prioriza paz, verdad, reparación y reintegración; acepta percepción de impunidad y concesiones difíciles."
+    "right_connotation": "Prioriza paz, verdad, reparación y reintegración; acepta percepción de justicia insuficiente y concesiones difíciles."
   },
   {
     "id": "Q15",
     "theme": "Fuerza pública y reforma policial",
     "title": "¿Expandir el poder y el presupuesto de la fuerza pública o reformarla con enfoque en derechos humanos y comunidad?",
     "plain_language_intro": "La policía y el ejército enfrentan críticas por abusos y falta de efectividad. Una propuesta es aumentar su presupuesto, equipamiento y facultades para combatir el crimen. Otra busca reformar su estructura, mejorar capacitación en derechos humanos y adoptar modelos de policía comunitaria.",
-    "technical_explanation": "De la Espriella propone aumentar el personal militar, comprar equipos a Estados Unidos e Israel y autorizar a la policía a usar fuerza letal contra manifestantes violentos【708851537569663†L316-L327】. Cepeda, alineado con la política de paz total, aboga por reformar la fuerza pública para garantizar derechos humanos y crear confianza con comunidades, aunque no hay un plan detallado publicado; se infiere de su enfoque de justicia social y reforma institucional【708851537569663†L242-L245】.",
+    "technical_explanation": "De la Espriella propone aumentar el personal militar, comprar equipos a Estados Unidos e Israel y autorizar a la policía a usar fuerza letal contra manifestantes violentos【708851537569663†L316-L327】. Cepeda, alineado con la política de paz total, aboga por reformar la fuerza pública para garantizar derechos humanos y crear confianza con comunidades, aunque no hay un plan detallado publicado; se infiere de su enfoque de derechos sociales y reforma institucional【708851537569663†L242-L245】.",
     "simple_explanation": "Más presupuesto y poder para la fuerza pública puede mejorar la seguridad rápida, pero puede aumentar los abusos y la represión. Reformarla para priorizar derechos humanos puede mejorar la confianza y disminuir la violencia, pero puede reducir capacidad inmediata de respuesta.",
     "affected_groups": [
       "miembros de la policía y el ejército",
@@ -584,10 +584,10 @@
       "defensores de derechos humanos",
       "manifestantes y organizaciones sociales"
     ],
-    "left_label": "Incrementar presupuesto, equipamiento y autoridad de policía y militares para enfrentar la delincuencia sin concesiones",
+    "left_label": "Incrementar presupuesto, equipamiento y autoridad de policía y militares para enfrentar delitos de alto impacto con mayor margen operativo",
     "right_label": "Reformar la fuerza pública para priorizar derechos humanos, transparencia y modelos de policía comunitaria",
     "left_cost_or_risk": "Puede incrementar abusos policiales y violaciones de derechos humanos, deteriorando la confianza en las instituciones【708851537569663†L316-L327】.",
-    "right_cost_or_risk": "Puede dejar a la fuerza pública con menos capacidad inmediata para responder a criminales y retardar la reducción de delitos",
+    "right_cost_or_risk": "Puede dejar a la fuerza pública con menos capacidad inmediata para responder a estructuras criminales o delitos de alto impacto y retardar la reducción de delitos",
     "candidate_alignment_left": "De La Espriella",
     "candidate_alignment_right": "Cepeda",
     "alignment_confidence": "medium",
@@ -643,14 +643,14 @@
     ],
     "dimension": "bienestar social",
     "left_connotation": "Prioriza dignidad en la vejez y cobertura para personas sin ahorro suficiente; acepta mayor presión fiscal.",
-    "right_connotation": "Prioriza sostenibilidad financiera y responsabilidad individual; acepta exclusión de trabajadores informales o pobres."
+    "right_connotation": "Prioriza sostenibilidad financiera y capacidad de ahorro y cotización individual; acepta exclusión de personas con ingresos bajos o trayectorias laborales informales."
   },
   {
     "id": "Q17",
     "theme": "Educación y universidades",
     "title": "¿Invertir en educación pública y universidades nuevas o impulsar educación técnica y participación del sector privado?",
     "plain_language_intro": "El sistema educativo enfrenta brechas de cobertura y calidad. Una propuesta es aumentar la inversión pública, construir universidades gratuitas y ampliar el acceso. Otra propone fortalecer la formación técnica y permitir que el sector privado ofrezca más servicios educativos.",
-    "technical_explanation": "Cepeda busca expandir la educación superior y construir nuevas universidades públicas como parte de su programa de justicia social【708851537569663†L233-L251】. De la Espriella, al proponer reducir el tamaño del Estado y las cargas fiscales【824602632538714†L224-L266】, podría impulsar la participación privada y la educación técnica para vincularse rápido al mercado laboral; no existen propuestas concretas, por lo que se infiere del enfoque general.",
+    "technical_explanation": "Cepeda busca expandir la educación superior y construir nuevas universidades públicas como parte de su programa de derechos sociales【708851537569663†L233-L251】. De la Espriella, al proponer reducir el tamaño del Estado y las cargas fiscales【824602632538714†L224-L266】, podría impulsar la participación privada y la educación técnica para vincularse rápido al mercado laboral; no existen propuestas concretas, por lo que se infiere del enfoque general.",
     "simple_explanation": "Invertir en universidades públicas aumenta la cobertura y promueve la igualdad, pero requiere grandes recursos y puede llevar a una oferta poco alineada con la demanda laboral. Fortalecer la educación técnica y la participación privada puede responder mejor a las necesidades del mercado, pero puede excluir a quienes no puedan pagar y aumentar la brecha educativa.",
     "affected_groups": [
       "estudiantes de regiones alejadas",
@@ -658,7 +658,7 @@
       "familias de bajos ingresos",
       "empresarios que necesitan mano de obra calificada"
     ],
-    "left_label": "Invertir fuertemente en universidades públicas gratuitas y ampliar el acceso a la educación superior",
+    "left_label": "Aumentar la inversión pública en universidades gratuitas y ampliar el acceso a la educación superior",
     "right_label": "Impulsar educación técnica, alianzas con empresas y participación privada para mejorar la empleabilidad",
     "left_cost_or_risk": "Requiere grandes recursos fiscales y puede generar sobreoferta de profesionales en áreas no demandadas【708851537569663†L233-L251】.",
     "right_cost_or_risk": "Puede aumentar la desigualdad educativa y excluir a quienes no puedan pagar; se corre el riesgo de que la educación se oriente solo al mercado",
@@ -683,15 +683,15 @@
     ],
     "dimension": "educación",
     "left_connotation": "Prioriza igualdad de acceso y movilidad social de largo plazo; acepta carga fiscal y posible desajuste con empleos disponibles.",
-    "right_connotation": "Prioriza empleabilidad rápida, formación técnica y vínculo con empresas; acepta desigualdad de acceso y captura privada."
+    "right_connotation": "Prioriza empleabilidad rápida, formación técnica y vínculo con empresas; acepta desigualdad de acceso y mayor dependencia de proveedores privados o criterios de empleabilidad."
   },
   {
     "id": "Q18",
     "theme": "Desarrollo regional e infraestructura",
     "title": "¿Priorizar grandes obras de infraestructura o invertir en desarrollo social y comunitario?",
     "plain_language_intro": "Muchas regiones carecen de carreteras, hospitales y servicios básicos. Algunos proponen grandes proyectos de infraestructura, carreteras y puentes para impulsar la economía. Otros piden invertir primero en salud, educación y proyectos comunitarios para mejorar la calidad de vida.",
-    "technical_explanation": "De la Espriella afirma que su plan económico lograría un crecimiento de 6–7 % anual gracias a la inversión en infraestructura, construcción, agricultura y turismo【824602632538714†L254-L271】. Cepeda, por su parte, enfatiza la importancia de la justicia social y la inversión en servicios básicos, educación y salud para reducir la pobreza y la desigualdad【708851537569663†L233-L251】. La alineación en esta pregunta se infiere de sus enfoques generales.",
-    "simple_explanation": "Grandes obras mejoran la conectividad y pueden atraer inversión, pero pueden no beneficiar inmediatamente a las comunidades más pobres. Invertir en salud y educación mejora la calidad de vida directamente, pero puede no generar crecimiento económico rápido.",
+    "technical_explanation": "De la Espriella afirma que su plan económico lograría un crecimiento de 6–7 % anual gracias a la inversión en infraestructura, construcción, agricultura y turismo【824602632538714†L254-L271】. Cepeda, por su parte, enfatiza la importancia de la inversión en servicios básicos, educación y salud para reducir la pobreza y la desigualdad【708851537569663†L233-L251】. La alineación en esta pregunta se infiere de sus enfoques generales.",
+    "simple_explanation": "Grandes obras mejoran la conectividad y pueden atraer inversión, pero pueden no beneficiar inmediatamente a comunidades con menor acceso a servicios. Invertir en salud y educación mejora la calidad de vida directamente, pero puede no generar crecimiento económico rápido.",
     "affected_groups": [
       "habitantes de zonas rurales y apartadas",
       "empresas constructoras y de transporte",
@@ -700,7 +700,7 @@
     ],
     "left_label": "Impulsar grandes proyectos de infraestructura y obras públicas para dinamizar la economía y crear empleo",
     "right_label": "Priorizar inversión en salud, educación y proyectos comunitarios antes que en megaproyectos",
-    "left_cost_or_risk": "Puede beneficiar más a grandes contratistas y no llegar a las zonas más pobres; riesgo de corrupción y endeudamiento【824602632538714†L254-L271】.",
+    "left_cost_or_risk": "Puede beneficiar más a grandes contratistas y no llegar a territorios con mayores carencias; riesgo de corrupción y endeudamiento【824602632538714†L254-L271】.",
     "right_cost_or_risk": "Puede retrasar el crecimiento económico y la conectividad que traen las grandes obras; requiere sostenibilidad fiscal",
     "candidate_alignment_left": "De La Espriella",
     "candidate_alignment_right": "Cepeda",
@@ -730,7 +730,7 @@
     "theme": "Política exterior y alianzas internacionales",
     "title": "¿Fortalecer alianzas tradicionales con Estados Unidos y Europa o adoptar una política exterior más autónoma y diversificada?",
     "plain_language_intro": "Colombia ha mantenido alianzas con Estados Unidos y Europa en comercio, seguridad y cooperación. Algunos creen que se debe profundizar esta cooperación. Otros plantean diversificar relaciones y buscar mayor autonomía en la política exterior.",
-    "technical_explanation": "De la Espriella quiere renovar las alianzas estratégicas con Estados Unidos e Israel para fortalecer la seguridad y la economía【824602632538714†L224-L266】. Cepeda, asociado con la izquierda latinoamericana, ha mostrado simpatía por una política exterior independiente y por fortalecer la integración regional y la paz, aunque no hay un plan detallado publicado; la inferencia se basa en su cercanía a Petro y su agenda de justicia social【708851537569663†L242-L245】.",
+    "technical_explanation": "De la Espriella quiere renovar las alianzas estratégicas con Estados Unidos e Israel para fortalecer la seguridad y la economía【824602632538714†L224-L266】. Cepeda, asociado con la izquierda latinoamericana, ha mostrado simpatía por una política exterior independiente y por fortalecer la integración regional y la paz, aunque no hay un plan detallado publicado; la inferencia se basa en su cercanía a Petro y su agenda de derechos sociales【708851537569663†L242-L245】.",
     "simple_explanation": "Profundizar alianzas con potencias tradicionales puede garantizar inversión, apoyo militar y estabilidad, pero puede limitar la autonomía y generar dependencia. Buscar mayor autonomía y relaciones con otros países puede diversificar riesgos y fortalecer la soberanía, pero puede alejar a socios tradicionales y afectar la inversión extranjera.",
     "affected_groups": [
       "exportadores e importadores",
@@ -770,7 +770,7 @@
     "theme": "Capacidad estatal y burocracia",
     "title": "¿Reducir la burocracia y el tamaño del Estado o fortalecer instituciones y aumentar la capacidad administrativa?",
     "plain_language_intro": "El aparato estatal colombiano es percibido como ineficiente. Una opción es recortar ministerios, eliminar entidades y dejar que el sector privado gestione más servicios. La otra opción es invertir en profesionalizar la burocracia, crear nuevas entidades y aumentar la capacidad de planeación y ejecución pública.",
-    "technical_explanation": "De la Espriella propone reducir el tamaño del Estado en un 40 %, recortar impuestos y liberar la economía para atraer inversión【824602632538714†L224-L266】. Cepeda, en cambio, planea ampliar el Estado para ejecutar programas sociales, construir universidades y expandir la reforma agraria【708851537569663†L233-L251】【609787524051082†L256-L263】. La elección entre estas opciones refleja visiones contrapuestas sobre el rol del Estado.",
+    "technical_explanation": "De la Espriella propone reducir el tamaño del Estado en un 40 %, recortar impuestos y desregular la economía para atraer inversión【824602632538714†L224-L266】. Cepeda, en cambio, planea ampliar el Estado para ejecutar programas sociales, construir universidades y expandir la reforma agraria【708851537569663†L233-L251】【609787524051082†L256-L263】. La elección entre estas opciones refleja visiones contrapuestas sobre el rol del Estado.",
     "simple_explanation": "Reducir la burocracia puede bajar costos y agilizar trámites, pero puede dejar al Estado sin capacidad para regular y prestar servicios. Fortalecer el Estado mejora la ejecución de políticas y la regulación, pero aumenta el gasto público y los impuestos.",
     "affected_groups": [
       "servidores públicos y sindicatos",

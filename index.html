@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cuestionario de dilemas</title>
-    <link rel="stylesheet" href="style.css?v=compact-ui-1" />
+    <link rel="stylesheet" href="style.css?v=ux-landing-vertical-1" />
   </head>
   <body>
     <h1>Comparador de preferencias sobre política en Colombia</h1>
@@ -16,12 +16,41 @@
       opciones se muestran sin asociación partidista para evitar sesgos. Al
       finalizar, verás qué candidato se aproxima más a tus respuestas en cada tema.
     </p>
-    <div id="quiz-container"></div>
+    <section id="landing-container" class="landing-card">
+      <span class="section-kicker">Antes de empezar</span>
+      <h2>Responde dilemas, no nombres de candidatos</h2>
+      <p>
+        El cuestionario oculta las alineaciones durante las preguntas para que puedas
+        mirar tus propios tradeoffs primero. Al final podrás revelar la lectura por
+        candidato, con fuentes y niveles de confianza.
+      </p>
+      <div class="landing-grid" aria-label="Ejemplo de interacción sin contenido político">
+        <div class="demo-card demo-card-a">
+          <span class="option-marker">Opción A</span>
+          <strong>Pasear con un perro en el parque</strong>
+        </div>
+        <div class="demo-divider">
+          <span>↑ A</span>
+          <span>Neutral</span>
+          <span>B ↓</span>
+        </div>
+        <div class="demo-card demo-card-b">
+          <span class="option-marker">Opción B</span>
+          <strong>Cuidar un gato en casa</strong>
+        </div>
+      </div>
+      <p class="info-text">
+        También puedes marcar qué tanto te afecta cada tema; esa importancia se puede
+        aplicar como ponderación en los resultados.
+      </p>
+      <button id="start-quiz-btn" type="button">Empezar cuestionario</button>
+    </section>
+    <div id="quiz-container" class="hidden"></div>
     <div id="navigation" class="hidden">
       <button id="prev-btn" disabled>Anterior</button>
       <button id="next-btn">Siguiente</button>
     </div>
     <div id="results-container" class="hidden"></div>
-    <script src="script.js?v=compact-ui-1"></script>
+    <script src="script.js?v=ux-landing-vertical-1"></script>
   </body>
 </html>
