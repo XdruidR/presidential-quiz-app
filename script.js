@@ -9,7 +9,7 @@
  */
 
 // Variables globales para almacenar preguntas y respuestas
-const APP_VERSION = 'ux-low-evidence-footer-1';
+const APP_VERSION = 'ux-landing-intro-only-1';
 let questions = [];
 let currentIndex = 0;
 let useWeightedResults = false;
@@ -18,6 +18,7 @@ const responses = [];
 
 // Referencias a elementos del DOM
 const landingContainer = document.getElementById('landing-container');
+const pageIntro = document.querySelector?.('.intro');
 const startQuizBtn = document.getElementById('start-quiz-btn');
 const quizContainer = document.getElementById('quiz-container');
 const navigation = document.getElementById('navigation');
@@ -59,6 +60,7 @@ function initLandingDemoControls() {
 }
 
 function showLanding() {
+  pageIntro?.classList.remove('hidden');
   if (landingContainer) {
     landingContainer.classList.remove('hidden');
   }
@@ -74,6 +76,7 @@ function startQuiz() {
   if (landingContainer) {
     landingContainer.classList.add('hidden');
   }
+  pageIntro?.classList.add('hidden');
   navigation.classList.remove('hidden');
   showQuestion(0);
 }
@@ -110,6 +113,7 @@ function showQuestion(index) {
   if (landingContainer) {
     landingContainer.classList.add('hidden');
   }
+  pageIntro?.classList.add('hidden');
   quizContainer.classList.remove('hidden');
   navigation.classList.remove('hidden');
   resultsContainer.classList.add('hidden');
@@ -660,6 +664,7 @@ function showResults() {
   if (landingContainer) {
     landingContainer.classList.add('hidden');
   }
+  pageIntro?.classList.add('hidden');
   quizContainer.classList.add('hidden');
   navigation.classList.add('hidden');
   const results = calculateAffinityResults(questions, responses, useWeightedResults);

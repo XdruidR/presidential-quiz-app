@@ -17,6 +17,9 @@ assert.doesNotMatch(index, /Ejemplo: mover hacia Opción A" disabled|Ejemplo de 
 assert.doesNotMatch(index + script, /A \/ 0|Neutral \/ 5|B \/ 10|>5<|textContent = '5'/, 'slider UI should not expose numeric scoring labels');
 assert.ok(script.includes('function showLanding()'), 'script should explicitly show the landing state');
 assert.ok(script.includes('function startQuiz()'), 'script should start quiz from the landing screen');
+assert.ok(script.includes("const pageIntro = document.querySelector?.('.intro')"), 'page intro should be controlled separately from the quiz');
+assert.ok(script.includes("pageIntro?.classList.add('hidden')"), 'page intro should be hidden after the first screen');
+assert.doesNotMatch(index, /Esta herramienta presenta dilemas reales/, 'landing intro should stay short');
 assert.ok(script.includes('function initLandingDemoControls()'), 'landing demo slider should have its own interactive controls');
 assert.ok(script.includes('function buildProgressTracker(index, total)'), 'quiz should show a progress tracker');
 assert.ok(script.includes('quizContainer.appendChild(progressEl)'), 'progress tracker should render above each question');
@@ -62,6 +65,7 @@ const context = {
   window: { addEventListener() {}, print() {} },
   document: {
     getElementById() { return noopElement(); },
+    querySelector() { return noopElement(); },
     createElement() { return noopElement(); },
   },
 };
