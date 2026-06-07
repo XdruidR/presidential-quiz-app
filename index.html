@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cuestionario de dilemas</title>
-    <link rel="stylesheet" href="style.css?v=ux-side-slider-1" />
+    <link rel="stylesheet" href="style.css?v=ux-side-slider-2" />
   </head>
   <body>
     <h1>Comparador de preferencias sobre política en Colombia</h1>
@@ -24,17 +24,20 @@
         mirar tus propios tradeoffs primero. Al final podrás revelar la lectura por
         candidato, con fuentes y niveles de confianza.
       </p>
-      <div class="landing-grid" aria-label="Ejemplo de interacción sin contenido político">
-        <div class="demo-card demo-card-a">
+      <div class="landing-grid demo-slider-container" aria-label="Ejemplo de interacción sin contenido político">
+        <div class="vertical-preference side-preference demo-preference" data-choice="neutral">
+          <button class="preference-arrow arrow-up" type="button" aria-label="Ejemplo: mover hacia Opción A" disabled>↑</button>
+          <div class="vertical-slider-rail">
+            <input class="slider vertical-slider" type="range" min="0" max="10" step="1" value="5" aria-label="Ejemplo de selector centrado" disabled />
+            <span class="neutral-chip preference-state">Centro</span>
+          </div>
+          <button class="preference-arrow arrow-down" type="button" aria-label="Ejemplo: mover hacia Opción B" disabled>↓</button>
+        </div>
+        <div class="demo-card demo-card-a option-card option-a">
           <span class="option-marker">Opción A</span>
           <strong>Pasear con un perro en el parque</strong>
         </div>
-        <div class="demo-divider">
-          <span>↑ A</span>
-          <span>Neutral</span>
-          <span>B ↓</span>
-        </div>
-        <div class="demo-card demo-card-b">
+        <div class="demo-card demo-card-b option-card option-b">
           <span class="option-marker">Opción B</span>
           <strong>Cuidar un gato en casa</strong>
         </div>
@@ -51,6 +54,6 @@
       <button id="next-btn">Siguiente</button>
     </div>
     <div id="results-container" class="hidden"></div>
-    <script src="script.js?v=ux-side-slider-1"></script>
+    <script src="script.js?v=ux-side-slider-2"></script>
   </body>
 </html>

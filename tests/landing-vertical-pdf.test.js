@@ -12,6 +12,8 @@ assert.match(index, /Pasear con un perro en el parque/, 'landing page should inc
 assert.match(index, /id="quiz-container" class="hidden"/, 'quiz should be hidden before the user starts');
 assert.match(index, /id="start-quiz-btn"/, 'landing page must have a start button');
 
+assert.match(index, /demo-preference/, 'landing example should use the same side slider layout as real questions');
+assert.doesNotMatch(index + script, /A \/ 0|Neutral \/ 5|B \/ 10|>5<|textContent = '5'/, 'slider UI should not expose numeric scoring labels');
 assert.ok(script.includes('function showLanding()'), 'script should explicitly show the landing state');
 assert.ok(script.includes('function startQuiz()'), 'script should start quiz from the landing screen');
 assert.ok(script.includes("verticalPreference.className = 'vertical-preference side-preference'"), 'question slider rail should sit beside the option cards');
@@ -58,24 +60,30 @@ const context = {
 vm.createContext(context);
 vm.runInContext(script, context);
 
-const slider = { value: '2' };
+const slider = { value: '2', setAttribute(name, value) { this[name] = value; } };
 const optionA = noopElement();
 const optionB = noopElement();
 const rail = noopElement();
 context.updateSliderVisualState(slider, optionA, optionB, rail);
 assert.strictEqual(rail.dataset.choice, 'a');
+assert.strictEqual(rail.dataset.centered, 'false');
+assert.strictEqual(slider['aria-valuetext'], 'Hacia Opción A');
 assert.strictEqual(optionA.dataset.active, 'true');
 assert.strictEqual(optionB.dataset.active, 'false');
 
 slider.value = '8';
 context.updateSliderVisualState(slider, optionA, optionB, rail);
 assert.strictEqual(rail.dataset.choice, 'b');
+assert.strictEqual(rail.dataset.centered, 'false');
+assert.strictEqual(slider['aria-valuetext'], 'Hacia Opción B');
 assert.strictEqual(optionA.dataset.active, 'false');
 assert.strictEqual(optionB.dataset.active, 'true');
 
 slider.value = '5';
 context.updateSliderVisualState(slider, optionA, optionB, rail);
 assert.strictEqual(rail.dataset.choice, 'neutral');
+assert.strictEqual(rail.dataset.centered, 'true');
+assert.strictEqual(slider['aria-valuetext'], 'Centro');
 assert.strictEqual(optionA.dataset.active, 'false');
 assert.strictEqual(optionB.dataset.active, 'false');
 

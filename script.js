@@ -9,7 +9,7 @@
  */
 
 // Variables globales para almacenar preguntas y respuestas
-const APP_VERSION = 'ux-side-slider-1';
+const APP_VERSION = 'ux-side-slider-2';
 let questions = [];
 let currentIndex = 0;
 let useWeightedResults = false;
@@ -139,8 +139,8 @@ function showQuestion(index) {
   const sliderRail = document.createElement('div');
   sliderRail.className = 'vertical-slider-rail';
   const neutralChip = document.createElement('span');
-  neutralChip.className = 'neutral-chip';
-  neutralChip.textContent = '5';
+  neutralChip.className = 'neutral-chip preference-state';
+  neutralChip.textContent = 'Centro';
   sliderRail.appendChild(sliderInput);
   sliderRail.appendChild(neutralChip);
 
@@ -150,7 +150,7 @@ function showQuestion(index) {
 
   const scaleLabels = document.createElement('div');
   scaleLabels.className = 'scale-labels vertical-scale-labels';
-  scaleLabels.innerHTML = '<span>A / 0</span><span>Neutral / 5</span><span>B / 10</span>';
+  scaleLabels.innerHTML = '<span>Opción A</span><span>Centro</span><span>Opción B</span>';
 
   const adjustSlider = (delta) => {
     const nextValue = Math.max(Number(sliderInput.min), Math.min(Number(sliderInput.max), Number(sliderInput.value) + delta));
@@ -223,7 +223,9 @@ function updateSliderVisualState(sliderInput, optionA, optionB, verticalPreferen
   const strength = Math.abs(normalized - 0.5) * 2;
   const choice = rawValue < 5 ? 'a' : rawValue > 5 ? 'b' : 'neutral';
   verticalPreference.dataset.choice = choice;
+  verticalPreference.dataset.centered = choice === 'neutral' ? 'true' : 'false';
   verticalPreference.style.setProperty('--preference-strength', strength.toFixed(2));
+  sliderInput.setAttribute('aria-valuetext', choice === 'neutral' ? 'Centro' : choice === 'a' ? 'Hacia Opción A' : 'Hacia Opción B');
   optionA.dataset.active = choice === 'a' ? 'true' : 'false';
   optionB.dataset.active = choice === 'b' ? 'true' : 'false';
   optionA.style.setProperty('--option-emphasis', choice === 'a' ? strength.toFixed(2) : '0');
