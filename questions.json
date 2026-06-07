@@ -89,7 +89,7 @@
     "id": "Q03",
     "theme": "Inversión extranjera y regulación",
     "title": "¿Facilitar la inversión con menos impuestos o exigir mayores condiciones?",
-    "plain_language_intro": "Colombia necesita inversión para crecer. Una opción es atraer capital extranjero bajando impuestos y regulaciones para que lleguen más empresas. La otra es imponer requisitos sociales y ambientales fuertes y asegurar que las ganancias beneficien a las comunidades locales, aunque algunas empresas decidan no invertir.",
+    "plain_language_intro": "Colombia necesita inversión para crecer. Una opción es atraer capital extranjero bajando impuestos y regulaciones para que lleguen más empresas. La otra es establecer requisitos sociales y ambientales más exigentes y asegurar que las ganancias beneficien a las comunidades locales, aunque algunas empresas decidan no invertir.",
     "technical_explanation": "De la Espriella propone recortar impuestos y reducir el tamaño del Estado en un 40 % para aumentar la inversión privada y reactivar sectores como minería y petróleo【824602632538714†L224-L266】. Cepeda propone ‘capitalismo social’: reformar las leyes para que las comunidades accedan a contratos públicos y ampliar el apoyo a adultos mayores, hogares de bajos ingresos y jóvenes【861670868475338†L256-L260】; él también plantea ampliar la base tributaria y cobrar más a personas de mayores ingresos【185161692428370†L229-L233】.",
     "simple_explanation": "Menos impuestos y reglas pueden atraer empresas y generar empleo rápido, pero podrían sacrificar estándares laborales y ambientales y reducir ingresos del Estado. Imponer condiciones asegura mejores salarios, protección del medio ambiente y beneficios para las comunidades, pero podría ahuyentar a inversionistas.",
     "affected_groups": [
@@ -208,17 +208,17 @@
   {
     "id": "Q06",
     "theme": "Seguridad urbana y crimen",
-    "title": "¿Respuesta policial y penitenciaria más fuerte o prevención social para reducir el crimen urbano?",
+    "title": "¿Mayor respuesta policial y penitenciaria o prevención social para reducir el crimen urbano?",
     "plain_language_intro": "En las ciudades se registran extorsiones, robos y microtráfico. Un enfoque propone aumentar la presencia policial, construir más cárceles y endurecer penas. Otro propone combinar medidas de seguridad con programas sociales para jóvenes y oportunidades de empleo.",
     "technical_explanation": "Abelardo de la Espriella centra su campaña en la seguridad: quiere construir diez megaprisiones, aumentar el presupuesto de las fuerzas armadas y autorizar a la policía a disparar a manifestantes violentos【708851537569663†L316-L327】; también plantea una ofensiva militar contra bandas y ampliar el pie de fuerza【824602632538714†L224-L266】. Iván Cepeda defiende una política de paz total y reducción de violencia mediante inversión social, educación y oportunidades para jóvenes, como parte de su enfoque de derechos sociales【708851537569663†L242-L251】.",
-    "simple_explanation": "Más policía y cárceles pueden reducir delitos rápidos pero pueden generar abusos y sobrepoblación carcelaria. Programas sociales pueden atacar las causas del crimen, pero son más lentos y requieren inversión.",
+    "simple_explanation": "Más presencia policial y capacidad penitenciaria pueden reducir algunos delitos en el corto plazo, pero pueden generar abusos y sobrepoblación carcelaria. Programas sociales pueden atacar las causas del crimen, pero son más lentos y requieren inversión.",
     "affected_groups": [
       "habitantes de ciudades y comerciantes",
       "jóvenes en riesgo de ser reclutados por bandas",
       "policías y personal de justicia",
       "familias de víctimas de extorsión"
     ],
-    "left_label": "Priorizar presencia policial, megacárceles y penas duras para combatir el crimen urbano de inmediato",
+    "left_label": "Priorizar presencia policial, infraestructura carcelaria de gran escala y sanciones penales más estrictas contra el crimen urbano",
     "right_label": "Combinar seguridad con inversión social, educación y empleo juvenil para prevenir el delito a mediano plazo",
     "left_cost_or_risk": "Puede aumentar el gasto en seguridad, saturar cárceles y generar abusos de derechos humanos【708851537569663†L316-L327】.",
     "right_cost_or_risk": "Los resultados son menos inmediatos y requieren recursos; pueden ser percibidos como insuficientes ante delitos urgentes o de alto impacto.",
@@ -242,26 +242,26 @@
       }
     ],
     "dimension": "seguridad y paz",
-    "left_connotation": "Prioriza respuesta inmediata frente a extorsión, robo y control criminal; acepta riesgos de abuso y hacinamiento carcelario.",
+    "left_connotation": "Prioriza respuesta inmediata frente a extorsión, robo y control criminal; acepta riesgos de abuso, hacinamiento y mayores costos penitenciarios.",
     "right_connotation": "Prioriza causas sociales, oportunidades juveniles y cohesión comunitaria; acepta que los resultados pueden tardar."
   },
   {
     "id": "Q07",
     "theme": "Seguridad rural y grupos armados",
-    "title": "¿Ofensiva militar contra grupos armados o negociación y desarrollo rural?",
-    "plain_language_intro": "En muchas zonas rurales operan grupos armados ilegales. Algunos quieren que el Estado lance una ofensiva militar y no abra negociaciones con estos grupos. Otros defienden negociar, impulsar proyectos de desarrollo y dar alternativas a las comunidades para reducir la violencia.",
+    "title": "¿Mayor presión militar contra grupos armados o negociación con desarrollo rural?",
+    "plain_language_intro": "En muchas zonas rurales operan grupos armados al margen de la ley. Un enfoque propone aumentar la presión militar, suspender negociaciones y priorizar operaciones de seguridad. Otro propone mantener negociaciones, impulsar desarrollo rural y ofrecer alternativas a las comunidades para reducir la violencia.",
     "technical_explanation": "De la Espriella promete no adelantar procesos de paz con grupos armados ilegales, reanudar los bombardeos y fumigaciones de cultivos de coca, y aumentar la presencia militar【824602632538714†L224-L266】. Cepeda apoya la ‘paz total’: seguir las negociaciones con guerrillas y bandas, y profundizar reformas sociales y agrarias para atacar las causas estructurales de la violencia【708851537569663†L242-L245】【609787524051082†L256-L263】.",
-    "simple_explanation": "Una ofensiva militar puede debilitar a los grupos armados rápidamente pero puede aumentar desplazamientos y violencia contra las comunidades. Negociar y desarrollar el campo puede reducir la violencia a largo plazo, pero puede percibirse como concesiones excesivas o justicia insuficiente.",
+    "simple_explanation": "Una mayor presión militar puede debilitar a los grupos armados en el corto plazo, pero puede aumentar desplazamientos y violencia contra las comunidades. Negociar y desarrollar el campo puede reducir la violencia a largo plazo, pero puede percibirse como beneficios excesivos o justicia insuficiente.",
     "affected_groups": [
       "campesinos y comunidades en zonas de conflicto",
-      "personas víctimas de violencia y extorsión",
+      "personas afectadas por violencia y extorsión",
       "miembros de la fuerza pública",
-      "familias de guerrilleros y excombatientes"
+      "familias de integrantes de grupos armados y excombatientes"
     ],
-    "left_label": "Lanzar una ofensiva militar fuerte, suspender negociaciones y erradicar cultivos ilícitos mediante operaciones de seguridad",
-    "right_label": "Mantener las negociaciones de paz y acompañarlas con inversión social, tierras y desarrollo rural",
+    "left_label": "Aumentar la presión militar, suspender negociaciones y erradicar cultivos ilícitos mediante operaciones de seguridad",
+    "right_label": "Mantener negociaciones de paz y acompañarlas con inversión social, tierras y desarrollo rural",
     "left_cost_or_risk": "Puede generar más violencia, desplazamientos y violaciones de derechos humanos; puede revivir ciclos de venganza【824602632538714†L224-L266】.",
-    "right_cost_or_risk": "Los acuerdos pueden ser impopulares, implicar concesiones judiciales y tomar mucho tiempo en mostrar resultados【708851537569663†L242-L245】.",
+    "right_cost_or_risk": "Los acuerdos pueden ser impopulares, implicar beneficios judiciales controversiales y tomar mucho tiempo en mostrar resultados【708851537569663†L242-L245】.",
     "candidate_alignment_left": "De La Espriella",
     "candidate_alignment_right": "Cepeda",
     "alignment_confidence": "high",
@@ -289,7 +289,7 @@
     ],
     "dimension": "seguridad y paz",
     "left_connotation": "Prioriza control territorial rápido y disuasión armada; acepta riesgo de daño civil y escalamiento del conflicto.",
-    "right_connotation": "Prioriza paz duradera, inclusión territorial y reformas rurales; acepta progreso lento y percepción de concesiones excesivas o justicia insuficiente."
+    "right_connotation": "Prioriza paz duradera, inclusión territorial y reformas rurales; acepta progreso lento y percepción de beneficios excesivos o justicia insuficiente."
   },
   {
     "id": "Q08",
@@ -534,25 +534,25 @@
   {
     "id": "Q14",
     "theme": "Víctimas, justicia y paz",
-    "title": "¿Priorizar reparación y acuerdos de paz o sanciones más estrictas y no negociar con grupos armados ilegales?",
-    "plain_language_intro": "Colombia acumula millones de víctimas del conflicto. Algunos abogan por la verdad, la reparación y acuerdos de paz con quienes han cometido delitos para terminar la violencia. Otros creen que se deben aplicar sanciones penales más estrictas y no negociar con grupos armados ilegales.",
-    "technical_explanation": "Cepeda respalda la ‘paz total’ y la justicia restaurativa, que incluyen acuerdos con guerrillas y bandas para desmovilizarse y reparar a las víctimas, además de reformas sociales【708851537569663†L242-L245】. De la Espriella rechaza cualquier proceso de paz con grupos armados ilegales, promete no negociar y promete sanciones severas y más cárceles【824602632538714†L224-L266】【708851537569663†L316-L327】.",
-    "simple_explanation": "La reparación y los acuerdos de paz pueden reducir la violencia y permitir reintegración, pero pueden percibirse como justicia insuficiente o concesiones excesivas. Las sanciones más estrictas pueden satisfacer la demanda de justicia, pero pueden perpetuar la guerra y obstaculizar la reconciliación.",
+    "title": "¿Priorizar reparación y acuerdos de paz o sanciones penales más estrictas?",
+    "plain_language_intro": "Colombia acumula millones de víctimas del conflicto. Un enfoque prioriza verdad, reparación y acuerdos de paz con personas responsables de delitos para terminar la violencia. Otro prioriza sanciones penales más estrictas y rechaza negociaciones con grupos armados al margen de la ley.",
+    "technical_explanation": "Cepeda respalda la ‘paz total’ y la justicia restaurativa, que incluyen acuerdos con guerrillas y bandas para desmovilizarse y reparar a las víctimas, además de reformas sociales【708851537569663†L242-L245】. De la Espriella rechaza cualquier proceso de paz con grupos armados al margen de la ley, promete no negociar y propone sanciones más estrictas y más cárceles【824602632538714†L224-L266】【708851537569663†L316-L327】.",
+    "simple_explanation": "La reparación y los acuerdos de paz pueden reducir la violencia y permitir reintegración, pero pueden percibirse como justicia insuficiente o beneficios excesivos. Las sanciones más estrictas pueden responder a demandas de justicia, pero pueden prolongar el conflicto y obstaculizar la reconciliación.",
     "affected_groups": [
       "víctimas del conflicto y sus familias",
-      "integrantes de grupos armados ilegales y excombatientes",
+      "integrantes de grupos armados y excombatientes",
       "operadores judiciales y defensores de derechos humanos",
       "comunidades en zonas de conflicto"
     ],
-    "left_label": "Rechazar negociaciones, aplicar sanciones penales más estrictas y aumentar las penas y las cárceles para grupos armados ilegales",
+    "left_label": "Rechazar negociaciones, aplicar sanciones penales más estrictas y ampliar la capacidad penitenciaria para integrantes de grupos armados",
     "right_label": "Promover verdad, reparación y acuerdos de paz con garantías, buscando justicia restaurativa y reintegración",
     "left_cost_or_risk": "Puede prolongar la violencia, sobrecargar el sistema penitenciario y generar nuevas violaciones de derechos humanos【708851537569663†L316-L327】.",
-    "right_cost_or_risk": "Puede generar percepción de justicia insuficiente o concesiones excesivas y descontento en sectores que piden sanciones más estrictas; negociaciones pueden fallar y generar frustración【708851537569663†L242-L245】.",
+    "right_cost_or_risk": "Puede generar percepción de justicia insuficiente o beneficios excesivos y descontento en sectores que piden sanciones más estrictas; negociaciones pueden fallar y generar frustración【708851537569663†L242-L245】.",
     "candidate_alignment_left": "De La Espriella",
     "candidate_alignment_right": "Cepeda",
     "alignment_confidence": "high",
     "alignment_basis": "official proposal",
-    "why_this_question_matters": "La política hacia las víctimas y los grupos armados ilegales definirá si Colombia avanza hacia la reconciliación o mantiene un enfoque punitivo. Afecta la paz y la legitimidad de la justicia.",
+    "why_this_question_matters": "La política hacia las víctimas y los grupos armados definirá si Colombia prioriza reconciliación, sanción penal o una combinación de ambas. Afecta la paz y la legitimidad de la justicia.",
     "sources": [
       {
         "title": "Candidate profiles: Defender of the Homeland and peace advocate",
@@ -564,12 +564,12 @@
         "title": "Colombian presidential hopeful vows to boost security and economy",
         "publisher": "Reuters",
         "url": "https://www.reuters.com/world/americas/colombia-outside-candidate-vows-military-offensive-security-2026-02-11/",
-        "what_it_supports": "De la Espriella promete no negociar con ilegales y lanza ofensiva militar【824602632538714†L224-L266】."
+        "what_it_supports": "De la Espriella promete no negociar con grupos armados y priorizar presión militar【824602632538714†L224-L266】."
       }
     ],
     "dimension": "seguridad y paz",
-    "left_connotation": "Prioriza castigo, disuasión y justicia para víctimas que rechazan concesiones; acepta riesgo de prolongar la guerra.",
-    "right_connotation": "Prioriza paz, verdad, reparación y reintegración; acepta percepción de justicia insuficiente y concesiones difíciles."
+    "left_connotation": "Prioriza sanción penal, disuasión y respuesta a víctimas que rechazan beneficios judiciales; acepta riesgo de prolongar el conflicto.",
+    "right_connotation": "Prioriza paz, verdad, reparación y reintegración; acepta percepción de justicia insuficiente y beneficios difíciles de aceptar."
   },
   {
     "id": "Q15",

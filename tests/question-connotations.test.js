@@ -34,7 +34,8 @@ function loadScriptContext() {
 }
 
 const context = loadScriptContext();
-const questions = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'questions.json'), 'utf8'));
+const questionSource = fs.readFileSync(path.join(__dirname, '..', 'questions.json'), 'utf8');
+const questions = JSON.parse(questionSource);
 
 const forbiddenBeforeResults = /Cepeda|Espriella|izquierda|derecha|progresista|conservador|conservadora|liberal|estatista|mercado|socialista/i;
 
@@ -51,5 +52,15 @@ assert.strictEqual(
   context.buildOptionCardHtml('Opción A', 'Reducir impuestos', 'Puede acelerar inversión, pero reduce recursos públicos.'),
   '<span class="option-marker">Opción A</span><span>Reducir impuestos</span><details class="option-hint"><summary aria-label="Ver matiz de la Opción A">ℹ️</summary><span>Puede acelerar inversión, pero reduce recursos públicos.</span></details>'
 );
+
+[
+  'ofensiva militar fuerte',
+  'Respuesta policial y penitenciaria más fuerte',
+  'penas duras',
+  'concesiones excesivas',
+  'no negociar con ilegales',
+].forEach((loadedPhrase) => {
+  assert.ok(!questionSource.includes(loadedPhrase), `loaded phrase should be neutralized: ${loadedPhrase}`);
+});
 
 console.log('question-connotations tests passed');

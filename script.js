@@ -9,7 +9,7 @@
  */
 
 // Variables globales para almacenar preguntas y respuestas
-const APP_VERSION = 'ux-progress-demo-1';
+const APP_VERSION = 'ux-neutral-security-1';
 let questions = [];
 let currentIndex = 0;
 let useWeightedResults = false;
