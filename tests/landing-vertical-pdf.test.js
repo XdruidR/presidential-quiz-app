@@ -19,6 +19,8 @@ assert.ok(script.includes('function startQuiz()'), 'script should start quiz fro
 assert.ok(script.includes("verticalPreference.className = 'vertical-preference side-preference'"), 'question slider rail should sit beside the option cards');
 assert.ok(script.includes("arrowUp.addEventListener('click', () => adjustSlider(-1))"), 'up arrow should move toward option A');
 assert.ok(script.includes("arrowDown.addEventListener('click', () => adjustSlider(1))"), 'down arrow should move toward option B');
+assert.match(css, /direction: ltr;/, 'native vertical slider should not invert arrow movement');
+assert.doesNotMatch(css, /direction: rtl;/, 'rtl direction makes the down arrow move the thumb upward in Chrome');
 assert.ok(script.includes('appendPdfExportControls(resultsContainer, results)'), 'results should render PDF export controls');
 assert.ok(script.includes('window.print()'), 'PDF export should use browser print-to-PDF');
 

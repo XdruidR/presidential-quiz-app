@@ -316,7 +316,7 @@ h2 {
   height: 100%;
   min-height: 160px;
   writing-mode: vertical-lr;
-  direction: rtl;
+  direction: ltr;
   touch-action: none;
 }
 

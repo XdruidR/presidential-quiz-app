@@ -9,7 +9,7 @@
  */
 
 // Variables globales para almacenar preguntas y respuestas
-const APP_VERSION = 'ux-side-slider-2';
+const APP_VERSION = 'ux-side-slider-3';
 let questions = [];
 let currentIndex = 0;
 let useWeightedResults = false;
